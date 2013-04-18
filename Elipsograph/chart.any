@@ -1,0 +1,261 @@
+  AnyChart Trajectory = 
+  {
+    //Visible = On;
+    //Opacity = 1;
+    Series = 
+    {
+      //RGBdef = ;
+      AnyChartSerie serie = 
+      {
+        Abscissa = "Main.MyStudy.Output.Model.Coupler.Point.r[0]";
+        Abscissa2 = "Main.MyStudy.Output.Model.Coupler.Point.r[1]";
+        Value = "Main.MyStudy.Output.Model.Coupler.Point.r[2]";
+        Lines.RGB = {0,0,1};
+        Lines.Thickness = 2;
+      };
+    };
+    AbsAxis.Visible = Off;
+    AbsAxis2.Visible = Off;
+    ValueAxis.Visible = Off;
+
+    Style = 
+    {
+      Style = CartesianChart3D;
+      Sizes = {1, 1, 1};
+      AutoSizes = On;
+      AutoPosition = On;
+      Axes.Style = Line3DStyleFull;
+      Axes.Thickness = 0.000001;
+//        RGB = {0.25, 0.25, 0.25};
+//      };
+//      Title = 
+//      {
+//        Visible = On;
+//        Font = 
+//        {
+//          RGB = {0, 0, 0};
+//          FontName = "Times New Roman";
+//          Height = 50;
+//          Width = 50;
+//          Bold = Off;
+//          Italic = Off;
+//          BillBoardView = On;
+//          ModelSized = On;
+//          ModelScaleHeight = 1;
+//          ModelScaleWidth = 1;
+//        };
+//        Text = "";
+//      };
+//      MessageFont = 
+//      {
+//        RGB = {0, 0, 0};
+//        FontName = "Times New Roman";
+//        Height = 50;
+//        Width = 50;
+//        Bold = Off;
+//        Italic = Off;
+//        BillBoardView = On;
+//        ModelSized = On;
+//        ModelScaleHeight = 1;
+//        ModelScaleWidth = 1;
+//      };
+    };
+    
+//    /*Legend = 
+//    {
+//    Visible = Off;
+//    };*/
+//    /*AbsAxis = 
+//    {
+//    Visible = On;
+//    Min = 0;
+//    Max = 1;
+//    AutoMin = On;
+//    AutoMax = On;
+//    Title = 
+//    {
+//    Visible = On;
+//    Font = 
+//    {
+//    RGB = {0, 0, 0};
+//    FontName = "Times New Roman";
+//    Height = 50;
+//    Width = 50;
+//    Bold = Off;
+//    Italic = Off;
+//    BillBoardView = On;
+//    ModelSized = On;
+//    ModelScaleHeight = 1;
+//    ModelScaleWidth = 1;
+//    };
+//    Text = "";
+//    };
+//    Unit1 = 
+//    {
+//    Visible = On;
+//    AutoUnit = On;
+//    Divisions = 5;
+//    Unit = 0.2;
+//    TickInside = 0;
+//    TickOutside = 0;
+//    GridLines = Off;
+//    GridLineStyle = 
+//    {
+//    Style = Line3DStyleFull;
+//    Thickness = 1;
+//    RGB = {0.25, 0.25, 0.25};
+//    };
+//    Text = On;
+//    TextFont = 
+//    {
+//    RGB = {0, 0, 0};
+//    FontName = "Times New Roman";
+//    Height = 50;
+//    Width = 50;
+//    Bold = Off;
+//    Italic = Off;
+//    BillBoardView = On;
+//    ModelSized = On;
+//    ModelScaleHeight = 1;
+//    ModelScaleWidth = 1;
+//    };
+//    TextSpace = 0;
+//    NumberFormat = 
+//    {
+//    Digits = 1;
+//    Style = 0;
+//    Scale = On;
+//    ScaleVal = 1;
+//    };
+//    };
+//    };*/
+//    /*AbsAxis2 = 
+//    {
+//    Visible = On;
+//    Min = 0;
+//    Max = 1;
+//    AutoMin = On;
+//    AutoMax = On;
+//    Title = 
+//    {
+//    Visible = On;
+//    Font = 
+//    {
+//    RGB = {0, 0, 0};
+//    FontName = "Times New Roman";
+//    Height = 50;
+//    Width = 50;
+//    Bold = Off;
+//    Italic = Off;
+//    BillBoardView = On;
+//    ModelSized = On;
+//    ModelScaleHeight = 1;
+//    ModelScaleWidth = 1;
+//    };
+//    Text = "";
+//    };
+//    Unit1 = 
+//    {
+//    Visible = On;
+//    AutoUnit = On;
+//    Divisions = 5;
+//    Unit = 0.2;
+//    TickInside = 0;
+//    TickOutside = 0;
+//    GridLines = Off;
+//    GridLineStyle = 
+//    {
+//    Style = Line3DStyleFull;
+//    Thickness = 1;
+//    RGB = {0.25, 0.25, 0.25};
+//    };
+//    Text = On;
+//    TextFont = 
+//    {
+//    RGB = {0, 0, 0};
+//    FontName = "Times New Roman";
+//    Height = 50;
+//    Width = 50;
+//    Bold = Off;
+//    Italic = Off;
+//    BillBoardView = On;
+//    ModelSized = On;
+//    ModelScaleHeight = 1;
+//    ModelScaleWidth = 1;
+//    };
+//    TextSpace = 0;
+//    NumberFormat = 
+//    {
+//    Digits = 1;
+//    Style = 0;
+//    Scale = On;
+//    ScaleVal = 1;
+//    };
+//    };
+//    };*/
+//    /*ValueAxis = 
+//    {
+//    Visible = On;
+//    Min = 0;
+//    Max = 1;
+//    AutoMin = On;
+//    AutoMax = On;
+//    Title = 
+//    {
+//    Visible = On;
+//    Font = 
+//    {
+//    RGB = {0, 0, 0};
+//    FontName = "Times New Roman";
+//    Height = 50;
+//    Width = 50;
+//    Bold = Off;
+//    Italic = Off;
+//    BillBoardView = On;
+//    ModelSized = On;
+//    ModelScaleHeight = 1;
+//    ModelScaleWidth = 1;
+//    };
+//    Text = "";
+//    };
+//    Unit1 = 
+//    {
+//    Visible = On;
+//    AutoUnit = On;
+//    Divisions = 5;
+//    Unit = 0.2;
+//    TickInside = 0;
+//    TickOutside = 0;
+//    GridLines = Off;
+//    GridLineStyle = 
+//    {
+//    Style = Line3DStyleFull;
+//    Thickness = 1;
+//    RGB = {0.25, 0.25, 0.25};
+//    };
+//    Text = On;
+//    TextFont = 
+//    {
+//    RGB = {0, 0, 0};
+//    FontName = "Times New Roman";
+//    Height = 50;
+//    Width = 50;
+//    Bold = Off;
+//    Italic = Off;
+//    BillBoardView = On;
+//    ModelSized = On;
+//    ModelScaleHeight = 1;
+//    ModelScaleWidth = 1;
+//    };
+//    TextSpace = 0;
+//    NumberFormat = 
+//    {
+//    Digits = 1;
+//    Style = 0;
+//    Scale = On;
+//    ScaleVal = 1;
+//    };
+//    };
+//    };
+//    //AnyChartSerie &<Insert name0> = <Insert object reference (or full object definition)>; You can make any number of these objects!
+  };

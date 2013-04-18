@@ -1,0 +1,184 @@
+  // Todo: Write a small description of your model here
+
+  //  // Coupler length
+//  #define L2 2.3
+//  #define L1 2
+//  // Slider Arm length
+//  #define RevoluteSlider1
+//  #define R1 4.1
+//  #define RevoluteSlider2
+//  #define R2 3
+//  
+  
+  // Skaev elipse
+  //  // Coupler length
+//  #define L2 6
+//  #define L1 1.5
+//  // Slider Arm length
+//  #define RevoluteSlider1
+//  #define R1 3
+//  #define RevoluteSlider2
+//  #define R2 2.6
+  
+  
+// Stanard elipsograph
+//   Coupler length
+  #define L2 3.4
+  #define L1 1.8
+  
+
+ 
+  
+Main = {
+
+  // The actual body model goes in this folder
+  AnyFolder MyModel = {
+
+    // Global Reference Frame
+    AnyFixedRefFrame GlobalRef = {
+    AnyRefNode Slider1Fix ={
+      ARel = RotMat(0*pi/180,z);
+    };
+    AnyRefNode Slider2Fix ={
+      ARel = RotMat(0*pi/180,z);
+    };
+    
+
+    
+    #include "chart.any"
+    #ifdef RevoluteSlider1
+    AnyRefNode Slider1Revolute = {
+       sRel = {-R1, 0,0};
+    }; 
+    #endif
+    #ifdef RevoluteSlider2
+    AnyRefNode Slider2Revolute = {
+       sRel = {0,-R2,0};
+    }; 
+    #endif
+    AnyDrawRefFrame drw = { }; 
+    
+    
+      
+    };  // Global reference frame
+
+  AnySeg Slider1 = {
+    r0 = {0,0.5,0};
+    Mass = 0.5; Jii = 0.001*{1,1,1};
+    AnyDrawSurf drw = {FileName = "box1";ScaleXYZ = 0.1*{1,2,0.1};};
+    #ifdef RevoluteSlider1 
+    AnyRefNode RevoluteAttachment = {
+      sRel = ..GlobalRef.Slider1Revolute.sRel;
+      AnyDrawRefFrame drw = {};
+    };
+    AnyDrawLine drwl = {
+      p0 = {0,0,0};p1 = .RevoluteAttachment.sRel;
+      Line.Thickness = 0.05;GlobalCoord = Off;
+    };
+    #endif
+  };
+  AnySeg Slider2 = {
+    r0 = {0.5,0,0};
+    Mass = 0.5; Jii = 0.001*{1,1,1};
+    AnyDrawSurf drw = {FileName = "box1";ScaleXYZ = 0.1*{2,1,0.1};};
+     #ifdef RevoluteSlider2
+    AnyRefNode RevoluteAttachment = {
+      sRel = ..GlobalRef.Slider2Revolute.sRel;
+      AnyDrawRefFrame drw = {};
+    };
+    AnyDrawLine drwl = {
+      p0 = {0,0,0};p1 = .RevoluteAttachment.sRel;
+      Line.Thickness = 0.05;GlobalCoord = Off;
+    };
+    #endif
+  };
+  AnySeg Coupler = {
+    Mass = 0.5; Jii = 0.01*{0.01,1,1};
+    AnyRefNode Slider1 = {
+       sRel = {L1,0,0};
+    };
+    AnyRefNode Slider2 = {
+       sRel = {0.0,0,0};
+    };
+    AnyRefNode Center = {
+      sRel = {L2/2,0,0.02};
+    AnyDrawSurf drw = {FileName = "box1";ScaleXYZ = {L2/2,0.05,0.012};RGB = {1,0,0};};
+    };
+    
+    AnyRefNode Point = {sRel = {L2,0,0.02};AnyDrawNode drw = {};};
+    
+    
+  };
+  #ifndef RevoluteSlider1 
+  AnyPrismaticJoint Slider1Jnt = {
+    AnyRefFrame &ref1 = .GlobalRef.Slider1Fix ;
+    AnyRefFrame &ref2 = .Slider1;
+    Axis = y;
+  };
+  #else
+  AnyRevoluteJoint Slider1Jnt = {
+    AnyRefFrame &ref1 = .GlobalRef.Slider1Revolute ;
+    AnyRefFrame &ref2 = .Slider1.RevoluteAttachment ;
+    Axis = z;
+    AnyDrawStdJoint drw = {};
+  };
+  #endif
+  
+  #ifndef RevoluteSlider2
+  AnyPrismaticJoint Slider2Jnt = {
+    AnyRefFrame &ref1 = .GlobalRef.Slider2Fix ;
+    AnyRefFrame &ref2 = .Slider2;
+    Axis = x;
+  };
+  #else
+  AnyRevoluteJoint Slider2Jnt = {
+    AnyRefFrame &ref1 = .GlobalRef.Slider2Revolute ;
+    AnyRefFrame &ref2 = .Slider2.RevoluteAttachment;
+    Axis = z;
+        AnyDrawStdJoint drw = {};
+  };
+  #endif
+  
+  AnyRevoluteJoint CouplerJnt2 = {
+    AnyRefFrame &ref1 = .Slider2;
+    AnyRefFrame &ref2 = .Coupler.Slider2;
+  };
+  AnyKinEq CouplerJnt1 = {
+    AnyKinMeasureOrg LinX = {
+      AnyKinLinear Lin = {
+        AnyRefFrame &ref1 = ...Slider1;
+        AnyRefFrame &ref2 = ...Coupler.Slider1;
+        Ref = 0;
+      };
+      MeasureOrganizer = {0,1};
+    };
+  };
+    
+  AnyKinEqSimpleDriver Rotate = {
+    AnyKinMeasureOrg KinRot = {
+       AnyKinRotational Rot = {
+          AnyRefFrame &ref = ...Coupler;
+          Type = RotAxesAngles;
+       };
+       MeasureOrganizer = {0};
+    };
+    DriverVel = {1};
+  };
+  
+  
+
+
+  
+  }; // MyModel
+
+  // The study: Operations to be performed on the model
+  AnyBodyStudy MyStudy = {
+    AnyFolder &Model = .MyModel;
+//    Kinematics.SolverType = KinSolOverDeterminate;
+    Gravity = {0.0, -9.81, 0.0};
+    nStep = 1000;
+    tStart = 0;
+    tEnd = 30;
+  };
+
+};  // Main
