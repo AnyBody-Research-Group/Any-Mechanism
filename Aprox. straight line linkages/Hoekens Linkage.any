@@ -1,0 +1,70 @@
+/*
+From Wikipedia:
+The Hoekens linkage is a four-bar mechanism that converts rotational motion 
+to approximate straight-line motion with approximate constant velocity.
+The precise design trades off straightness, lack of acceleration, and what 
+proportion of the driving rotation is spent in the linear portion of the full curve.
+The example to the right spends over half of the cycle in the near straight portion.
+*/
+
+#include "../Templates/fourbar_template.any"
+#include "../Templates/tracer_template.any"
+Main = {
+
+  AnyOperationSequence RunApplication = {
+    AnyOperation &ref =.Study.Kinematics;
+  };
+  
+    AnyFixedRefFrame GlobalRef = {
+      AnyRefNode g1  ={sRel = {0,0,0};};
+      AnyRefNode g2  ={sRel = {0.2,0,0};};
+    };  // Global reference frame
+
+    
+    
+    Fourbar_template HoekensLinkage(
+    GND1 = .GlobalRef.g1,
+    GND2 = .GlobalRef.g2,
+    L_CRANK1 = 0.1,
+    L_CRANK2 = 0.25,
+    L_COUPLER = 0.25
+    ) = {
+      Coupler = {
+        AnyRefNode EndPoint = {sRel = 2*.Crank2Node.sRel; };
+        AnyDrawLine drw2 = {
+          p0 = .Crank1Node.sRel; p1 = .EndPoint.sRel;
+          Line.Thickness = 0.02;GlobalCoord = Off; Line.RGB = {0.5,0.5,1};
+          Line.End.Style  = Line3DCapStyleArrow ;
+        };
+      };
+      AnyKinEqFourierDriver driver = 
+      {
+        Type = Cos;
+        Freq = 1;
+        A = {{pi,pi/2*1.9}};
+        B = {{0,0}};
+         AnyKinMeasureOrg KinRot = {
+            AnyKinRotational Rot = {
+               AnyRefFrame &ref = ...Crank1 ;
+               Type = RotAxesAngles;
+            };
+            MeasureOrganizer = {0};
+         };
+      };
+      
+  };
+//    
+  AnyBodyStudy Study = {
+    nStep = 500;
+    tStart = 0;
+    tEnd = 2;
+    AnyFolder &Model = .HoekensLinkage;
+    tracer_template chart1(
+    ABS1 = "Main.Study.Output.Model.Coupler.EndPoint.r[0]",
+    ABS2 = "Main.Study.Output.Model.Coupler.EndPoint.r[1]",
+    VAL = "Main.Study.Output.Model.Coupler.EndPoint.r[2 ]"
+     ) = {};
+    Gravity = {0.0, -9.81, 0.0};
+  };
+
+};  // Main

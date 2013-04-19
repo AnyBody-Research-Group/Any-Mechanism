@@ -1,0 +1,79 @@
+/*
+From Wikipedia: 
+Watt's linkage (also known as the parallel linkage) is a type of mechanical
+linkage invented by James Watt (19 January 1736 – 25 August 1819) in which
+the central moving point of the linkage is constrained to travel on an
+approximation to a straight line. Its applications include doubling the power
+of a piston engine by allowing a double-acting cylinder to connect to a
+rocking beam, and, in automobile suspensions, allowing the axle of a vehicle
+to travel vertically while preventing sideways motion
+*/
+
+#include "../Templates/fourbar_template.any"
+#include "../Templates/tracer_template.any"
+Main = {
+  
+  AnyOperationSequence RunApplication = {
+    AnyOperation &ref =.Study.Kinematics;
+  };
+
+    AnyFixedRefFrame GlobalRef = {
+      // Crate two frames for grounding the model
+      AnyRefNode g1  ={sRel = {0,0,0};};
+      AnyRefNode g2  ={sRel = {1,0.2,0};};
+    };  // Global reference frame
+
+    
+    
+    Fourbar_template Model(
+    GND1 = .GlobalRef.g1,
+    GND2 = .GlobalRef.g2,
+    L_CRANK1 = 0.5,
+    L_CRANK2 = 0.5,
+    L_COUPLER = 0.2
+    ) = {
+     Crank1_Axes0 = RotMat(0.0,z);
+     Coupler_Axes0 = RotMat(pi/2,z);
+     Crank2_Axes0 = RotMat(pi,z);
+     Coupler = {
+        // add tracer point to coupler
+        AnyRefNode TracerPoint = {
+          sRel = 0.5*.Crank2Node.sRel;
+          AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};};
+        };
+      };
+      
+      
+  AnyKinEqFourierDriver Driver = 
+      {
+        Type = Sin;
+        Freq = 1;
+        A = {{0,pi/8}};
+        B = {{0,0}};
+         AnyKinMeasureOrg KinRot = {
+            AnyKinRotational Rot = {
+               AnyRefFrame &ref = ...Crank1;
+               Type = RotAxesAngles;
+            };
+            MeasureOrganizer = {0};
+         };
+      };
+
+  };
+    
+
+  AnyBodyStudy Study = {
+    
+    nStep = 200;
+    tStart = 0;
+    tEnd = 2;
+    AnyFolder &Model = .Model;
+    tracer_template chart1(
+    ABS1 = "Main.Study.Output.Model.Coupler.TracerPoint.r[0]",
+    ABS2 = "Main.Study.Output.Model.Coupler.TracerPoint.r[1]",
+    VAL = "Main.Study.Output.Model.Coupler.TracerPoint.r[2 ]"
+     ) = {};
+    Gravity = {0.0, -9.81, 0.0};
+  };
+
+};  // Main

@@ -1,0 +1,97 @@
+#class_template Fourbar_template (AnyRefFrame &GND1, AnyRefFrame &GND2,L_CRANK1, L_CRANK2, L_COUPLER){
+
+  #var AnyVec3 Crank1_r0 = GND1.sRel;
+  #var AnyMat33 Crank1_Axes0 = RotMat(pi/2,z);
+  #var AnyVec3 Crank2_r0 = Coupler_r0 +{L_COUPLER, 0,0}*Coupler_Axes0'-{L_CRANK2,0,0}*Crank2_Axes0';
+  #var AnyMat33 Crank2_Axes0 = RotMat(pi/2,z);
+  #var AnyVec3 Coupler_r0 = Crank1_r0+{L_CRANK1,0,0}*Crank1_Axes0';
+  #var AnyMat33 Coupler_Axes0 = RotMat(0.0,z);
+
+    
+AnySeg Crank1 ={
+    r0 = .Crank1_r0 ;
+    Axes0 = .Crank1_Axes0 ;
+    Mass = 0;
+    Jii = {0, 0, 0};
+    AnyRefNode CouplerNode = {
+      sRel = {L_CRANK1,0,0};
+      AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};};
+    };
+    AnyDrawLine drwl = {
+      p0 = {0,0,0};p1 = .CouplerNode.sRel;
+      Line.Thickness = 0.02;GlobalCoord = Off;
+      Line.RGB = {1,0.5,0.5};
+      };
+};
+AnySeg Crank2 ={
+    r0 = .Crank2_r0 ;
+    Axes0 = .Crank2_Axes0 ;
+    Mass = 0;
+    Jii = {0, 0, 0};
+    AnyRefNode CouplerNode = {
+      sRel = {L_CRANK2,0,0};
+      AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};};
+    };
+    AnyDrawLine drwl = {
+      p0 = {0,0,0};p1 = .CouplerNode.sRel;
+      Line.Thickness = 0.02;GlobalCoord = Off; Line.RGB = {0.5,1,0.5};    
+
+    };
+};
+AnySeg Coupler ={
+    r0 = .Coupler_r0 ;
+    Axes0 = .Coupler_Axes0 ;
+    Mass = 0;
+    Jii = {0, 0, 0};
+    AnyRefNode Crank1Node = {
+      sRel = {0,0,0};
+    };
+    AnyRefNode Crank2Node = {
+      sRel = {L_COUPLER,0,0};
+    };
+    AnyDrawLine drwl = {
+      p0 = .Crank1Node.sRel; p1 = .Crank2Node.sRel;
+      Line.Thickness = 0.02;GlobalCoord = Off; Line.RGB = {0.5,0.5,1};
+
+    };
+};
+AnyRevoluteJoint GroudCrank1Jnt = 
+{
+  //Axis = z;
+  //Ref = 0;
+  AnyRefFrame &Ref0 = .GND1;
+  AnyRefFrame &Ref1 = .Crank1;
+  AnyDrawStdJoint drw = { };
+};
+
+AnyRevoluteJoint GroudCrank2Jnt = 
+{
+  //Axis = z;
+  //Ref = 0;
+  AnyRefFrame &Ref0 = .GND2;
+  AnyRefFrame &Ref1 = .Crank2;
+  AnyDrawStdJoint drw = { };
+};
+
+AnyRevoluteJoint CouplerCrank1Jnt = 
+{
+  //Axis = z;
+  //Ref = 0;
+  AnyRefFrame &Ref0 = .Crank1.CouplerNode ;
+  AnyRefFrame &Ref1 = .Coupler.Crank1Node;
+//  AnyDrawStdJoint drw = { };
+
+};
+AnyKinEq CouplerCrank2Jnt = {
+    AnyKinMeasureOrg LinXY = {
+      AnyKinLinear Lin = {
+  AnyRefFrame &Ref0 = ...Crank2.CouplerNode ;
+  AnyRefFrame &Ref1 = ...Coupler.Crank2Node;
+        Ref = 0;
+      };
+      MeasureOrganizer = {0,1};
+    };
+  };
+ 
+  
+};

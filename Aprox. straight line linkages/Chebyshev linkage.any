@@ -1,0 +1,73 @@
+/*
+From Wikipedia: 
+The Chebyshev linkage is a mechanical linkage that converts rotational motion to 
+approximate straight-line motion.
+It was invented by the 19th century mathematician Pafnuty Chebyshev who studied 
+theoretical problems in kinematic mechanisms. One of the problems was the 
+construction of a linkage that converts a rotary motion into an approximate 
+straight line motion. This was also studied by James Watt in his improvements 
+to the steam engine.
+*/
+
+#include "../Templates/fourbar_template.any"
+#include "../Templates/tracer_template.any"
+Main = {
+  
+  AnyOperationSequence RunApplication = {
+    AnyOperation &ref =.Study.Kinematics;
+  };
+
+    AnyFixedRefFrame GlobalRef = {
+      AnyRefNode g1  ={sRel = {0,0,0};};
+      AnyRefNode g2  ={sRel = {0.4,0,0};};
+    };  // Global reference frame
+
+    
+    
+    Fourbar_template Model(
+    GND1 = .GlobalRef.g1,
+    GND2 = .GlobalRef.g2,
+    L_CRANK1 = 0.5,
+    L_CRANK2 = 0.5,
+    L_COUPLER = 0.2
+    ) = {
+      
+      
+      
+      Coupler = {
+        AnyRefNode EndPoint = {sRel = 0.5*.Crank2Node.sRel; AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};};        
+        };
+      };
+      AnyKinEqFourierDriver Driver = 
+      {
+        Type = Cos;
+        Freq = 1;
+        A = {{pi,pi/2*1.1}};
+        B = {{0,0}};
+         AnyKinMeasureOrg KinRot = {
+            AnyKinRotational Rot = {
+               AnyRefFrame &ref = ...Coupler ;
+               Type = RotAxesAngles;
+            };
+            MeasureOrganizer = {0};
+         };
+      };
+
+  };
+//    
+
+  AnyBodyStudy Study = {
+    
+    nStep = 120;
+    tStart = 0;
+    tEnd = 2;
+    AnyFolder &Model = .Model;
+    tracer_template chart1(
+    ABS1 = "Main.Study.Output.Model.Coupler.EndPoint.r[0]",
+    ABS2 = "Main.Study.Output.Model.Coupler.EndPoint.r[1]",
+    VAL = "Main.Study.Output.Model.Coupler.EndPoint.r[2 ]"
+     ) = {};
+    Gravity = {0.0, -9.81, 0.0};
+  };
+
+};  // Main
