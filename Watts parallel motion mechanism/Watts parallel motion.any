@@ -1,0 +1,139 @@
+/*
+From Wikipedia: 
+
+*/
+
+#include "../Templates/fourbar_template.any"
+#include "../Templates/tracer_template.any"
+
+
+      #define WattCrankLength 0.5
+      #define WattCouplerLength 0.3
+      #define ParallelExtensionFactor 2
+      #define WheelSize 0.15
+Main = {
+  
+  AnyFolder Mechanism = {
+    
+    AnyFixedRefFrame GlobalRef = {
+      AnyRefNode WalkingBeamPivot  ={sRel = {0,0,0};};
+      AnyRefNode WattsPivot  ={sRel = {2*WattCrankLength ,-0.3,0};};
+      AnyRefNode WheelCenter  ={sRel = {-WattCrankLength,-0.6,0};};
+    };  // Global reference frame
+      
+      
+      Fourbar_template WattsLinkages(
+      GND1 = .GlobalRef.WalkingBeamPivot  ,
+      GND2 = .GlobalRef.WattsPivot  ,
+      L_CRANK1 = WattCrankLength ,
+      L_CRANK2 = WattCrankLength ,
+      L_COUPLER = WattCouplerLength 
+      ) = {
+        Crank1_Axes0 = RotMat(0.0,z);
+        Coupler_Axes0 = RotMat(-pi/2,z);
+        Crank2_Axes0 = RotMat(pi,z);
+        Crank1 = {
+          AnyRefNode Pantograph1Node = {sRel =.CouplerNode.sRel;};
+        };
+        Coupler = {
+          AnyRefNode Piston1 = {sRel = 0.5*.Crank2Node.sRel; AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};}; };
+          AnyRefNode Pantograph2Node = {sRel = ParallelExtensionFactor *.Piston1.sRel; AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};}; };
+          AnyDrawLine drwl2 = {
+            p0 = .Crank2Node.sRel; p1 = .Pantograph2Node.sRel;
+            Line.Thickness = 0.02;GlobalCoord = Off; Line.RGB = {0.5,0.5,1};
+          };
+          
+        };
+        
+        
+  
+      };
+      Fourbar_template PantographExtender(
+      GND1 = .WattsLinkages.Crank1.Pantograph1Node ,
+      GND2 = .WattsLinkages.Coupler.Pantograph2Node ,
+      L_CRANK1 = WattCrankLength *(ParallelExtensionFactor-1),
+      L_CRANK2 = WattCrankLength *(ParallelExtensionFactor-1) ,
+      L_COUPLER = (0.5*WattCouplerLength)  *ParallelExtensionFactor 
+      ) = {
+        Crank1_Axes0 = .WattsLinkages.Crank1.Axes0;
+        Coupler_Axes0 = .WattsLinkages.Coupler.Axes0;
+        Crank2_Axes0 = .WattsLinkages.Crank1.Axes0;
+        Crank1 = {
+          AnyRefNode DriveNode = {sRel = -1*...WattsLinkages.Crank1.CouplerNode.sRel; AnyDrawNode drw = {ScaleXYZ = 0.05*{1,1,1};};   };
+        };
+        AnyKinEq AttachToWattsLinkages = 
+        {
+          MeasureOrganizer ={1};     
+          AnyKinLinear Kin = {
+            AnyRefFrame &ref = ..Crank1.DriveNode;
+            AnyRefFrame &ref1 = ...WattsLinkages.Crank1;
+          };
+        };
+      };       
+      
+      
+      Fourbar_template Rocker(
+      GND1 = .GlobalRef.WalkingBeamPivot  ,
+      GND2 = .GlobalRef.WheelCenter  ,
+      L_CRANK1 = WattCrankLength ,
+      L_CRANK2 = WheelSize ,
+      L_COUPLER = 0.6
+      ) = {
+        Crank1_Axes0 = RotMat(-pi,z);
+        Coupler_Axes0 = RotMat(-pi/2.5,z);
+        Crank2_Axes0 = RotMat(pi/4,z);
+        Crank1 = {
+          AnyRefNode DriveNode = {sRel = -1*...WattsLinkages.Crank1.CouplerNode.sRel; AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};};        
+          };
+        };
+        AnyKinEq AttachToWattsLinkages = 
+        {
+          MeasureOrganizer ={1};     
+          AnyKinLinear Kin = {
+            AnyRefFrame &ref = ..Crank1.DriveNode;
+            AnyRefFrame &ref1 = ...WattsLinkages.Crank1.CouplerNode;
+          };
+        };        
+
+      }; 
+      
+
+//      };
+
+      AnyKinEqSimpleDriver Driver = 
+      {
+        DriverVel = {2*pi};
+          AnyKinMeasureOrg KinRot = {
+            AnyKinRotational Rot = {
+              AnyRefFrame &ref = ...Rocker.Crank2;
+              Type = RotAxesAngles;
+            };
+            MeasureOrganizer = {0};
+          };
+      };
+
+      
+    };  
+
+  AnyBodyStudy MyStudy = {
+//    InitialConditions.SolverType = KinSolOverDeterminate;
+//    Kinematics.SolverType = KinSolOverDeterminate;
+    nStep = 200;
+    tStart = 0;
+    tEnd = 2;
+    AnyFolder &Model = .Mechanism;
+    tracer_template Piston1Trace(
+    ABS1 = "Main.MyStudy.Output.Model.WattsLinkages.Coupler.Piston1.r[0]",
+    ABS2 = "Main.MyStudy.Output.Model.WattsLinkages.Coupler.Piston1.r[1]",
+    VAL = "Main.MyStudy.Output.Model.WattsLinkages.Coupler.Piston1.r[2 ]"
+     ) = {};
+    tracer_template Piston2Trace(
+    ABS1 = "Main.MyStudy.Output.Model.PantographExtender.Coupler.Crank2Node.r[0]",
+    ABS2 = "Main.MyStudy.Output.Model.PantographExtender.Coupler.Crank2Node.r[1]",
+    VAL = "Main.MyStudy.Output.Model.PantographExtender.Coupler.Crank2Node.r[2 ]"
+     ) = {};
+     
+    Gravity = {0.0, -9.81, 0.0};
+  };
+
+};  // Main
