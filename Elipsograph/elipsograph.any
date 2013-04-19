@@ -10,7 +10,7 @@
 //  #define R2 3
 //  
   
-  // Skaev elipse
+  // Skeved elipse
   //  // Coupler length
 //  #define L2 6
 //  #define L1 1.5
@@ -56,7 +56,6 @@ Main = {
        sRel = {0,-R2,0};
     }; 
     #endif
-    AnyDrawRefFrame drw = { }; 
     
     
       
@@ -105,7 +104,7 @@ Main = {
     AnyDrawSurf drw = {FileName = "box1";ScaleXYZ = {L2/2,0.05,0.012};RGB = {1,0,0};};
     };
     
-    AnyRefNode Point = {sRel = {L2,0,0.02};AnyDrawNode drw = {};};
+    AnyRefNode Point = {sRel = {L2,0,0.02};AnyDrawNode drw = {RGB = {0,1,0};ScaleXYZ = 0.07*{1,1,1};};};
     
     
   };
@@ -162,7 +161,7 @@ Main = {
        };
        MeasureOrganizer = {0};
     };
-    DriverVel = {1};
+    DriverVel = {2*pi};
   };
   
   
@@ -176,9 +175,9 @@ Main = {
     AnyFolder &Model = .MyModel;
 //    Kinematics.SolverType = KinSolOverDeterminate;
     Gravity = {0.0, -9.81, 0.0};
-    nStep = 1000;
+    nStep = 60;
     tStart = 0;
-    tEnd = 30;
+    tEnd = 1;
   };
 
 };  // Main
