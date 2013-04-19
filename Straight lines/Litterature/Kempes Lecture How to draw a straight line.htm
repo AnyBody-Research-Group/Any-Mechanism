@@ -1,0 +1,2330 @@
+
+<html>
+<head>
+
+<script language="JavaScript">
+<!--
+
+function newImage(arg) {
+  if (document.images) {
+    rslt = new Image();
+    rslt.src = arg;
+    return rslt;
+  }
+}
+
+function changeImages_I() {
+  if (document.images && (preloadFlag_I == true)) {
+    for (var i=0; i<changeImages_I.arguments.length; i+=2) {
+      document[changeImages_I.arguments[i]].src = changeImages_I.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_I = false;
+function preloadImage_I() {
+  if (document.images) {
+    fig01a = newImage("fig/01anim.gif");
+    preloadFlag_I = true;
+  }
+}
+
+function changeImages_II() {
+  if (document.images && (preloadFlag_II == true)) {
+    for (var i=0; i<changeImages_II.arguments.length; i+=2) {
+      document[changeImages_II.arguments[i]].src = changeImages_II.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_II = false;
+function preloadImage_II() {
+  if (document.images) {
+    fig02a = newImage("fig/02anim.gif");
+    preloadFlag_II = true;
+  }
+}
+
+function changeImages_III() {
+  if (document.images && (preloadFlag_III == true)) {
+    for (var i=0; i<changeImages_III.arguments.length; i+=2) {
+      document[changeImages_III.arguments[i]].src = changeImages_III.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_III = false;
+function preloadImage_III() {
+  if (document.images) {
+    fig03a = newImage("fig/03anim.gif");
+    preloadFlag_III = true;
+  }
+}
+
+function changeImages_IV() {
+  if (document.images && (preloadFlag_IV == true)) {
+    for (var i=0; i<changeImages_IV.arguments.length; i+=2) {
+      document[changeImages_IV.arguments[i]].src = changeImages_IV.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_IV = false;
+function preloadImage_IV() {
+  if (document.images) {
+    fig04a = newImage("fig/04anim.gif");
+    preloadFlag_IV = true;
+  }
+}
+
+function changeImages_V() {
+  if (document.images && (preloadFlag_V == true)) {
+    for (var i=0; i<changeImages_V.arguments.length; i+=2) {
+      document[changeImages_V.arguments[i]].src = changeImages_V.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_V = false;
+function preloadImage_V() {
+  if (document.images) {
+    fig05a = newImage("fig/05anim.gif");
+    preloadFlag_V = true;
+  }
+}
+
+function changeImages_VIII_I() {
+  if (document.images && (preloadFlag_VIII_I == true)) {
+    for (var i=0; i<changeImages_VIII_I.arguments.length; i+=2) {
+      document[changeImages_VIII_I.arguments[i]].src = changeImages_VIII_I.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_VIII_I = false;
+function preloadImage_VIII_I() {
+  if (document.images) {
+    fig081a = newImage("fig/081anim.gif");
+    preloadFlag_VIII_I = true;
+  }
+}
+
+function changeImages_VIII_II() {
+  if (document.images && (preloadFlag_VIII_II == true)) {
+    for (var i=0; i<changeImages_VIII_II.arguments.length; i+=2) {
+      document[changeImages_VIII_II.arguments[i]].src = changeImages_VIII_II.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_VIII_II = false;
+function preloadImage_VIII_II() {
+  if (document.images) {
+    fig082a = newImage("fig/082anim.gif");
+    preloadFlag_VIII_II = true;
+  }
+}
+
+function changeImages_IX() {
+  if (document.images && (preloadFlag_IX == true)) {
+    for (var i=0; i<changeImages_IX.arguments.length; i+=2) {
+      document[changeImages_IX.arguments[i]].src = changeImages_IX.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_IX = false;
+function preloadImage_IX() {
+  if (document.images) {
+    fig09a = newImage("fig/09anim.gif");
+    preloadFlag_IX = true;
+  }
+}
+
+function changeImages_X() {
+  if (document.images && (preloadFlag_X == true)) {
+    for (var i=0; i<changeImages_X.arguments.length; i+=2) {
+      document[changeImages_X.arguments[i]].src = changeImages_X.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_X = false;
+function preloadImage_X() {
+  if (document.images) {
+    fig10a = newImage("fig/10anim.gif");
+    preloadFlag_X = true;
+  }
+}
+
+function changeImages_XI() {
+  if (document.images && (preloadFlag_XI == true)) {
+    for (var i=0; i<changeImages_XI.arguments.length; i+=2) {
+      document[changeImages_XI.arguments[i]].src = changeImages_XI.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XI = false;
+function preloadImage_XI() {
+  if (document.images) {
+    fig11a = newImage("fig/11anim.gif");
+    preloadFlag_XI = true;
+  }
+}
+
+function changeImages_XII() {
+  if (document.images && (preloadFlag_XII == true)) {
+    for (var i=0; i<changeImages_XII.arguments.length; i+=2) {
+      document[changeImages_XII.arguments[i]].src = changeImages_XII.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XII = false;
+function preloadImage_XII() {
+  if (document.images) {
+    fig12a = newImage("fig/12anim.gif");
+    preloadFlag_XII = true;
+  }
+}
+
+function changeImages_XIII() {
+  if (document.images && (preloadFlag_XIII == true)) {
+    for (var i=0; i<changeImages_XIII.arguments.length; i+=2) {
+      document[changeImages_XIII.arguments[i]].src = changeImages_XIII.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XIII = false;
+function preloadImage_XIII() {
+  if (document.images) {
+    fig13a = newImage("fig/13anim.gif");
+    preloadFlag_XIII = true;
+  }
+}
+
+function changeImages_XIV() {
+  if (document.images && (preloadFlag_XIV == true)) {
+    for (var i=0; i<changeImages_XIV.arguments.length; i+=2) {
+      document[changeImages_XIV.arguments[i]].src = changeImages_XIV.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XIV = false;
+function preloadImage_XIV() {
+  if (document.images) {
+    fig14a = newImage("fig/14anim.gif");
+    preloadFlag_XIV = true;
+  }
+}
+
+function changeImages_XVI() {
+  if (document.images && (preloadFlag_XVI == true)) {
+    for (var i=0; i<changeImages_XVI.arguments.length; i+=2) {
+      document[changeImages_XVI.arguments[i]].src = changeImages_XVI.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XVI = false;
+function preloadImage_XVI() {
+  if (document.images) {
+    fig16a = newImage("fig/16anim.gif");
+    preloadFlag_XVI = true;
+  }
+}
+
+function changeImages_XVIII() {
+  if (document.images && (preloadFlag_XVIII == true)) {
+    for (var i=0; i<changeImages_XVIII.arguments.length; i+=2) {
+      document[changeImages_XVIII.arguments[i]].src = changeImages_XVIII.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XVIII = false;
+function preloadImage_XVIII() {
+  if (document.images) {
+    fig18a = newImage("fig/18anim.gif");
+    preloadFlag_XVIII = true;
+  }
+}
+
+function changeImages_XIX() {
+  if (document.images && (preloadFlag_XIX == true)) {
+    for (var i=0; i<changeImages_XIX.arguments.length; i+=2) {
+      document[changeImages_XIX.arguments[i]].src = changeImages_XIX.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XIX = false;
+function preloadImage_XIX() {
+  if (document.images) {
+    fig19a = newImage("fig/19anim.gif");
+    preloadFlag_XIX = true;
+  }
+}
+
+function changeImages_XX() {
+  if (document.images && (preloadFlag_XX == true)) {
+    for (var i=0; i<changeImages_XX.arguments.length; i+=2) {
+      document[changeImages_XX.arguments[i]].src = changeImages_XX.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XX = false;
+function preloadImage_XX() {
+  if (document.images) {
+    fig20a = newImage("fig/20anim.gif");
+    preloadFlag_XX = true;
+  }
+}
+
+function changeImages_XXI() {
+  if (document.images && (preloadFlag_XXI == true)) {
+    for (var i=0; i<changeImages_XXI.arguments.length; i+=2) {
+      document[changeImages_XXI.arguments[i]].src = changeImages_XXI.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXI = false;
+function preloadImage_XXI() {
+  if (document.images) {
+    fig21a = newImage("fig/21anim.gif");
+    preloadFlag_XXI = true;
+  }
+}
+
+function changeImages_XXII() {
+  if (document.images && (preloadFlag_XXII == true)) {
+    for (var i=0; i<changeImages_XXII.arguments.length; i+=2) {
+      document[changeImages_XXII.arguments[i]].src = changeImages_XXII.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXII = false;
+function preloadImage_XXII() {
+  if (document.images) {
+    fig22a = newImage("fig/22anim.gif");
+    preloadFlag_XXII = true;
+  }
+}
+
+function changeImages_XXIII_I() {
+  if (document.images && (preloadFlag_XXIII_I == true)) {
+    for (var i=0; i<changeImages_XXIII_I.arguments.length; i+=2) {
+      document[changeImages_XXIII_I.arguments[i]].src = changeImages_XXIII_I.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXIII_I = false;
+function preloadImage_XXIII_I() {
+  if (document.images) {
+    fig231a = newImage("fig/231anim.gif");
+    preloadFlag_XXIII_I = true;
+  }
+}
+
+function changeImages_XXIII_II() {
+  if (document.images && (preloadFlag_XXIII_II == true)) {
+    for (var i=0; i<changeImages_XXIII_II.arguments.length; i+=2) {
+      document[changeImages_XXIII_II.arguments[i]].src = changeImages_XXIII_II.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXIII_II = false;
+function preloadImage_XXIII_II() {
+  if (document.images) {
+    fig232a = newImage("fig/232anim.gif");
+    preloadFlag_XXIII_II = true;
+  }
+}
+
+function changeImages_XXIII_III() {
+  if (document.images && (preloadFlag_XXIII_III == true)) {
+    for (var i=0; i<changeImages_XXIII_III.arguments.length; i+=2) {
+      document[changeImages_XXIII_III.arguments[i]].src = changeImages_XXIII_III.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXIII_III = false;
+function preloadImage_XXIII_III() {
+  if (document.images) {
+    fig233a = newImage("fig/233anim.gif");
+    preloadFlag_XXIII_III = true;
+  }
+}
+
+function changeImages_XXIV() {
+  if (document.images && (preloadFlag_XXIV == true)) {
+    for (var i=0; i<changeImages_XXIV.arguments.length; i+=2) {
+      document[changeImages_XXIV.arguments[i]].src = changeImages_XXIV.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXIV = false;
+function preloadImage_XXIV() {
+  if (document.images) {
+    fig24a = newImage("fig/24anim.gif");
+    preloadFlag_XXIV = true;
+  }
+}
+
+function changeImages_XXV() {
+  if (document.images && (preloadFlag_XXV == true)) {
+    for (var i=0; i<changeImages_XXV.arguments.length; i+=2) {
+      document[changeImages_XXV.arguments[i]].src = changeImages_XXV.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXV = false;
+function preloadImage_XXV() {
+  if (document.images) {
+    fig25a = newImage("fig/25anim.gif");
+    preloadFlag_XXV = true;
+  }
+}
+
+function changeImages_XXVI() {
+  if (document.images && (preloadFlag_XXVI == true)) {
+    for (var i=0; i<changeImages_XXVI.arguments.length; i+=2) {
+      document[changeImages_XXVI.arguments[i]].src = changeImages_XXVI.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXVI = false;
+function preloadImage_XXVI() {
+  if (document.images) {
+    fig26a = newImage("fig/26anim.gif");
+    preloadFlag_XXVI = true;
+  }
+}
+
+function changeImages_XXVII() {
+  if (document.images && (preloadFlag_XXVII == true)) {
+    for (var i=0; i<changeImages_XXVII.arguments.length; i+=2) {
+      document[changeImages_XXVII.arguments[i]].src = changeImages_XXVII.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXVII = false;
+function preloadImage_XXVII() {
+  if (document.images) {
+    fig27a = newImage("fig/27anim.gif");
+    preloadFlag_XXVII = true;
+  }
+}
+
+function changeImages_XXVIII_I() {
+  if (document.images && (preloadFlag_XXVIII_I == true)) {
+    for (var i=0; i<changeImages_XXVIII_I.arguments.length; i+=2) {
+      document[changeImages_XXVIII_I.arguments[i]].src = changeImages_XXVIII_I.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXVIII_I = false;
+function preloadImage_XXVIII_I() {
+  if (document.images) {
+    fig281a = newImage("fig/281anim.gif");
+    preloadFlag_XXVIII_I = true;
+  }
+}
+
+function changeImages_XXVIII_II() {
+  if (document.images && (preloadFlag_XXVIII_II == true)) {
+    for (var i=0; i<changeImages_XXVIII_II.arguments.length; i+=2) {
+      document[changeImages_XXVIII_II.arguments[i]].src = changeImages_XXVIII_II.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXVIII_II = false;
+function preloadImage_XXVIII_II() {
+  if (document.images) {
+    fig282a = newImage("fig/282anim.gif");
+    preloadFlag_XXVIII_II = true;
+  }
+}
+
+function changeImages_XXIX_I() {
+  if (document.images && (preloadFlag_XXIX_I == true)) {
+    for (var i=0; i<changeImages_XXIX_I.arguments.length; i+=2) {
+      document[changeImages_XXIX_I.arguments[i]].src = changeImages_XXIX_I.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXIX_I = false;
+function preloadImage_XXIX_I() {
+  if (document.images) {
+    fig291a = newImage("fig/291anim.gif");
+    preloadFlag_XXIX_I = true;
+  }
+}
+
+function changeImages_XXIX_II() {
+  if (document.images && (preloadFlag_XXIX_II == true)) {
+    for (var i=0; i<changeImages_XXIX_II.arguments.length; i+=2) {
+      document[changeImages_XXIX_II.arguments[i]].src = changeImages_XXIX_II.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXIX_II = false;
+function preloadImage_XXIX_II() {
+  if (document.images) {
+    fig292a = newImage("fig/292anim.gif");
+    preloadFlag_XXIX_II = true;
+  }
+}
+
+function changeImages_XXX() {
+  if (document.images && (preloadFlag_XXX == true)) {
+    for (var i=0; i<changeImages_XXX.arguments.length; i+=2) {
+      document[changeImages_XXX.arguments[i]].src = changeImages_XXX.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXX = false;
+function preloadImage_XXX() {
+  if (document.images) {
+    fig30a = newImage("fig/30anim.gif");
+    preloadFlag_XXX = true;
+  }
+}
+
+function changeImages_XXXI() {
+  if (document.images && (preloadFlag_XXXI == true)) {
+    for (var i=0; i<changeImages_XXXI.arguments.length; i+=2) {
+      document[changeImages_XXXI.arguments[i]].src = changeImages_XXXI.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXXI = false;
+function preloadImage_XXXI() {
+  if (document.images) {
+    fig31a = newImage("fig/31anim.gif");
+    preloadFlag_XXXI = true;
+  }
+}
+
+function changeImages_XXXII() {
+  if (document.images && (preloadFlag_XXXII == true)) {
+    for (var i=0; i<changeImages_XXXII.arguments.length; i+=2) {
+      document[changeImages_XXXII.arguments[i]].src = changeImages_XXXII.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXXII = false;
+function preloadImage_XXXII() {
+  if (document.images) {
+    fig32a = newImage("fig/32anim.gif");
+    preloadFlag_XXXII = true;
+  }
+}
+
+function changeImages_XXXIII() {
+  if (document.images && (preloadFlag_XXXIII == true)) {
+    for (var i=0; i<changeImages_XXXIII.arguments.length; i+=2) {
+      document[changeImages_XXXIII.arguments[i]].src = changeImages_XXXIII.arguments[i+1];
+    }
+  }
+}
+
+var preloadFlag_XXXIII = false;
+function preloadImage_XXXIII() {
+  if (document.images) {
+    fig33a = newImage("fig/33anim.gif");
+    preloadFlag_XXXIII = true;
+  }
+}
+
+// -->
+</script>
+<style>
+<!--
+p
+  {
+    margin-top: 0em;
+    margin-bottom: 0em;
+    text-indent: 40px;
+    text-align: justify;
+    line-height: 1.5;
+  }
+hr
+  {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+hr.noskip
+  {
+    margin-top: 0em;
+    margin-bottom: 0em;
+	width: 90%;
+  }
+p.center
+  {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+    text-indent: 0px;
+    line-height: 1.25;
+  }
+p.displaymath
+  {
+    margin-top: .5em;
+    margin-bottom: .5em;
+    text-align: center;
+    text-indent: 0px;
+    line-height: 1.5;
+  }
+p.noindent
+  {
+    margin-top: 0em;
+    margin-bottom: 0em;
+    text-align: justify;
+    text-indent: 0px;
+    line-height: 1.5;
+  }
+p.note
+  {
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 5em;
+    margin-right: 5em;
+    text-align: justify;
+    text-indent: 40px;
+    line-height: 1.5;
+  }
+// -->
+</style>
+</head>
+<body  bgcolor="#E6E6FA" text="#000080" link="#000080" vlink="#000080"
+leftmargin="2" topmargin="10" rightmargin="14" marginwidth="9" marginheight="10">
+<!-- bgcolor="#000000" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" -->
+<basefont size="4" face="New Century Schoolbook">
+<br><p class="center" style="{line-height:1;
+margin-top:.5em; margin-bottom:.5em;}"><font size="+3"><b>
+HOW TO DRAW<br> A STRAIGHT LINE</b>;</font></p>
+<p class="center" style="{margin-top:.5em;}">
+A<br>
+<font size="+2"><i>LECTURE ON LINKAGES.</i></font></p>
+
+<p class="center" style="{margin-bottom:.25em;}">
+<font size="-2">BY<br></font>
+<font size="+2">A</font><b>LFRED</b>
+<font size="+2">B</font><b>RAY</b>
+<font size="+2">K</font><b>EMPE,</b></p>
+
+<p class="center" style="{margin-top:.5em; margin-bottom:2em;}">
+<font size="-2">
+OF THE INNER TEMPLE, ESQ.;<br>
+MEMBER OF THE COUNCIL OF THE LONDON MATHEMATICAL SOCIETY;<br>
+AND LATE SCHOLAR OF TRINITY COLLEGE, CAMBRIDGE.</font></p>
+
+<center><img src="fig/macmil.gif"></center>
+<p class="center" style="{margin-top:0em; margin-bottom:.15em;}">
+<font face="Blackletter686 BT" size="+3"><b>L</b></font>
+<font face="Frankenstein" size="+1">ondon</font>
+<font size="+1"><b>:</b></font><br>
+<font size="-1"><b>MACMILLAN AND CO.<br>1877.</b></font></p>
+
+<p class="center" style="{margin-top:0em; margin-bottom:.15em;}">
+Original text taken from 
+<A href="http://historical.library.cornell.edu/cgi-bin/cul.math/docviewer?did=Kemp009&seq=5">
+The Cornell Historic Math Monograph Collection</A>.</p>
+
+<hr class="noskip">
+
+<p class="center">
+<font size="+1">NOTICE.</font></p>
+
+<p class="note">
+This Lecture was one of the series delivered to science
+teachers last summer in connection with the Loan
+Collection of Scientific Apparatus. I have taken the
+opportunity afforded by its publication to slightly
+enlarge it and to add several notes.  For the
+illustrations I am indebted to my brother, Mr. H.&nbsp;R.&nbsp;Kempe,
+without whose able and indefatigable co-operation in
+drawing them and in constructing the models furnished
+by me to the Loan Collection I could hardly have
+undertaken the delivery of the Lecture, and still less
+its publication.</p>
+
+<p class="note" style="{text-align:right;}">
+7, Crown Office Row, Temple,<br>
+<i>January 16th, 1877.</i></p>
+
+<hr>
+
+<basefont size="5" face="New Century Schoolbook">
+
+<p>
+The great geometrician Euclid, before demonstrating to
+us the various propositions contained in his <i>Elements of
+Geometry</i>, requires that we should be able to effect certain
+processes. These <i>Postulates</i>, as the requirements are
+termed, may roughly he said to demand that we should
+be able to describe straight lines and circles. And
+so great is the veneration that is paid to this
+master-geometrician, that there are many who would refuse the
+designation of “geometrical” to a demonstration which
+requires any other construction than can be effected by
+straight lines and circles. Hence many problems—such as,
+for example, the trisection of an angle—which can readily
+be effected by employing other simple means, are said to
+have no geometrical solution, since they cannot be solved
+by straight lines and circles only.</p>
+
+<p>
+It becomes then interesting to inquire how we can effect
+these preliminary requirements, how we can describe these
+circles and these straight lines, with as much accuracy
+as the physical circumstances of the problems will admit of.</p>
+
+<p>
+<a name="note01_">As
+regards the circle we encounter no difficulty. Taking
+Euclid’s definition, and assuming, as of course we must,
+that our surface on which we wish to describe the circle is
+a plane, </a><a href="#note01">(1)</a><sup><font
+size="-1">1</font></sup> we see that we have only to make our
+tracing-point preserve a distance from the given centre of the circle
+constant and equal to the required radius. This can readily
+be effected by taking a flat piece of any form, such as the
+piece of cardboard I have here, and passing a pivot which
+is fixed to the given surface at the given centre through a
+hole in the piece, and a tracer or pencil through another
+hole in it whose distance from the first is equal to the
+given radius; we shall then, by moving the pencil, be able,
+even with this rude apparatus, to describe a circle with
+considerable accuracy and ease; and when we come to employ
+very small holes and pivots, or oven large ones, turned with
+all that marvellous truth which the lathe affords, we shall
+get a result unequalled perhaps among mechanical apparatus
+for the smoothness and accuracy of its movement. The
+apparatus I have just described is of course nothing but a
+simple form of a pair of compasses, and it is usual to say
+that the third Postulate postulates the compasses.</p>
+
+<hr width="25%" align="left" style="{margin-bottom:0em;}">
+<p>
+<font size="-1"><sup>1</sup>
+These figures refer to Notes at the end of the lecture.</font></p>
+
+<br>
+
+<p>
+<a name="note02_">But
+the straight line, how are we going to describe that? Euclid
+defines it as “lying evenly between its extreme
+points.” This does not help us much. Our text-books say
+that the first and second Postulates postulate a ruler
+</a><a href="#note02">(2)</a>.
+But surely that is begging the question. If we are to draw
+a straight line with a ruler, the ruler must itself have a
+straight edge; and how are we going to make the edge
+straight? We come back to our starting-point.</p>
+
+<p>
+Now I wish you clearly to understand the difference
+between the method I just now employed for describing a
+circle, and the ruler method of describing a straight line.
+If I applied the ruler method to the description of a circle,
+I should take a circular lamina, such as a penny, and trace
+my circle by passing the pencil round the edge, and I should
+have the same difficulty that I had with the straight-edge,
+for I should first have to make the lamina itself circular.
+But the other method I employed involves no begging the
+question. I do not first assume that I have a circle and
+then use it to trace one, but simply require that the distance
+between two points shall be invariable. I am of course
+aware that we do employ circles in our simple compass, the
+pivot and the hole in the moving piece which it fits are
+such; but they are used not because they are the curves
+we want to describe (they are not so, but are of a different
+size), as is the case with the straight-edge, but because,
+through the impossibility of constructing pivots or holes of
+no finite dimensions, we are forced to adopt the best substitute
+we can for making one point in the moving piece
+remain at the same spot. If we employ a very small pivot
+and hole, though they be not truly circular, the error in
+the description of a circle of moderate dimensions will be
+practically infinitesimal, not perhaps varying beyond the
+width of the thinnest line which the tracer can be made to
+describe; and even when we employ large pivots and holes
+we shall get results as accurate, because those pivots and
+holes may be made by the employment of very small ones
+in the machine which makes them.</p>
+
+<p>
+It appears then, that although we have an easy and accurate
+method of describing a circle, we have at first sight no
+corresponding means of describing a straight line; and
+there would seem to be a substantial difficulty in producing
+what mathematicians call the simplest curve, so that the
+question how to get over that difficulty becomes one of a
+decided theoretical interest.</p>
+
+<p>
+Nor is the interest theoretical only, for the question is
+one of direct importance to the practical mechanician. In
+a large number of machines and scientific apparatus it is
+requisite that some point or points should move accurately
+in a straight line with as little friction as possible. If the
+ruler principle is adopted, and the point is kept in its path
+by guides, we have, besides the initial difficulty of making
+the guides truly straight, the wear and tear produced by
+the friction of the sliding surfaces, and the deformation
+produced by changes of temperature and varying strains.
+It becomes therefore of real consequence to obtain, if
+possible, some method which shall not involve these objectionable
+features, but possess the accuracy and ease
+of movement which characterise our circle-producing
+apparatus.</p>
+
+<p>
+Turning to that apparatus, we notice that all that is
+requisite to draw with accuracy a circle of any given
+radius is to have the distance between the pivot and the
+tracer properly determined, and if I pivot a second “piece”
+to the fixed surface at a second point having a tracer as
+the first piece has, by properly determining the distance
+between the second tracer and pivot, I can describe a second
+circle whose radius bears any proportion I please to that of
+the first circle. Now, removing the tracers, let me pivot
+a third piece to these two <i>radial</i> pieces, as I may
+call them, at the points where the tracers were, and let me
+fix a tracer at any point on this third or <i>traversing</i>
+piece. You will
+at once see that if the radial pieces were big enough the
+tracer would describe circles or portions of circles on <i>them</i>,
+though they are in motion, with the same ease and accuracy
+as in the case of the simple circle-drawing apparatus; the
+tracer will not however describe a circle on the <i>fixed</i> surface,
+but a complicated curve.</p>
+
+<a name="fig01_"><hr>
+<a onclick="if (preloadFlag_I == false) {
+preloadImage_I(); changeImages_I('fig01','fig/01anim.gif'); }
+else { changeImages_I('fig01','fig/01.gif'); preloadFlag_I = false; };">
+<center><img name="fig01" src="fig/01.gif"><br>
+<font size="-1">Fig. 1</font></center></a>
+<hr></a>
+
+<p>
+This curve will, however, be described with all the case
+and accuracy of movement with which the circles were described,
+and if I wish to reproduce in a second apparatus the
+curves which I produce with this, I have only to get the
+distances between the pivots and tracers accurately the same
+in both cases, and the curves will also be accurately the same.
+I could of course go on adding fresh pieces <i>ad libitum</i>, and
+I should get points on the structure produced, describing in
+general very complicated curves, but with the same results
+as to accuracy and smoothness, <i>the reproduction of any particular
+curve depending solely on the correct determination of a certain
+definite number of distances</i>.</p>
+
+<p>
+<a name="note03_">These
+systems, built up of pieces pointed or pivoted
+together, and turning about pivots attached to a fixed base,
+so that the various points on the pieces all describe definite
+curves I shall term “link-motions,” the pieces being termed
+“links.” As, however, it sometimes facilitates the consideration
+of the properties of these structures to regard
+them apart from the base to which they are pivoted, the
+word “linkage” is employed to denote any combination of
+pieces pivoted together.  When such a combination in
+pivoted in any way to a fixed base, the motion of points on
+it not being necessarily confined to fixed paths, the
+link-structure is called a “linkwork:” a “linkwork” in which
+the motion of every point is in some definite path being,
+as before stated, termed a “link-motion.” I shall only add
+to these expressions two more: the point of a link-motion
+which describes any curve is called a “graph,” the curve
+being called a “gram” </a><a href="#note03">(3)</a>.</p>
+
+<p>
+The consideration of the various properties of these
+“linkages” has occupied much attention of late years among
+mathematicians, and is a subject of much complexity and
+difficulty. With the purely mathemati-cal side of the
+question I do not, however, propose to deal to-day, as we
+shall have quite enough to do if we confine our attention to
+the practical results which mathematicians have obtained,
+mid which I believe only mathematicians could have obtained.
+That these results are valuable cannot I think
+be doubted, though it may well be that their great beauty
+has led some to attribute to them an importance which they
+do not really possess; and it may be that fifty years ago
+they would have had a value which, through the great
+improvements that modern mechanicians have effected in the
+production of true planes, rulers and other exact mechanical
+structures, cannot now be ascribed to them. But linkages
+have not at present, I think, been sufficiently put before
+the mechanician to enable us to say what value should
+really be set upon them.</p>
+
+<p>
+The practical results obtained by the use of linkages
+are but few in number, and are closely connected with the
+problem of “straight-line motion,” having in fact been
+discovered during the investigation of that problem, and I
+shall be naturally led to consider them if I make “straight-line
+motion” the backbone of my lecture. Before, however,
+plunging into the midst of these linkages it will be useful
+to know how we can practically construct such models as
+we require; and here is one of the great advantages of our
+subject—we can get our results visibly before us so very
+easily. Pins for fixed pivots, cards for links, string or cotton
+for the other pivots, and a dining-room table, or a drawing-board
+if the former be thought objectionable, for a fixed
+base, are all we require. If something more artistic be
+preferred, the plan adopted in the models exhibited by me
+in the Loan Collection can be employed. The models were
+constructed by my brother, Mr. H.&nbsp;R.&nbsp;Kempe, in the
+following way. The bases are thin deal boards painted black;
+the links are neatly shaped out of thick cardboard (it is
+hard work making them, you have to sharpen your knife
+about every ten minutes, as the cardboard turns the edge
+very rapidly); the pivots are little rivets made of catgut,
+the heads being formed by pressing the face of a heated
+steel chisel on the ends of the gut after it is passed through
+the holes in the links; this gives a very firm and smoothly-working
+joint. More durable links may be made of tinplate; the pivot-holes
+must in this case be punched, and
+the eyelets used by bootmakers for laced boots employed
+as pivots; you can get the proper tools at a trifling expense
+at any large tool shop.</p>
+
+<p>
+Now, as I have said, the curves described by the
+various points on these link-motions are in general very
+complex. But they are not necessarily so. By properly choosing
+the distances at our disposal we can
+make them very simple. But can we go to the fullest
+extent of simplicity and get a point on one of them moving
+accurately in a straight line? That is what we are going
+to investigate.</p>
+
+<p>
+To solve the problem with our single link is clearly
+impossible: all the points on it describe circles. We must
+therefore go to the next simple case—our three-link motion.
+In this case you will see that we have at our disposal the
+distance between the fixed pivots, the distances between the
+pivots on the radial links, the distance between the pivots
+on the traveling link, and the distances of the tracer from
+those pivots; in all six different distances. Can we choose
+those distances so that our tracing-point shall move in a
+straight line?</p>
+
+<p>
+<a name="note04_">The
+first person who investigated this was that great man
+James Watt. “Watt’s Parallel Motion”
+</a><a href="#note04">(4)</a>, invented in
+1784, is well known to every engineer, and is employed in
+nearly every beam-engine. The apparatus, reduced to its
+simplest form, is shown in <a href="#fig02_">Fig.&nbsp;2</a>.</p>
+
+<a name="fig02_"><hr>
+<a onclick="if (preloadFlag_II == false) {
+preloadImage_II(); changeImages_II('fig02','fig/02anim.gif'); }
+else { changeImages_II('fig02','fig/02.gif'); preloadFlag_II = false; };">
+<center><img name="fig02" src="fig/02.gif"><br>
+<font size="-1"><br>Fig. 2</font></center></a>
+<hr></a>
+
+<p>
+The radial bars are of equal length,—I employ the word
+“length” for brevity, to denote the distance between the
+pivots; the links of course may be of any length or shape,—and
+the distance between the pivots or the traversing link
+is such that when the radial bars are parallel the line
+joining those pivots is perpendicular to the radial bars.
+The tracing-point is situate half-way between the pivots
+on the traversing piece. The curve described by the tracer
+is, if the apparatus does not deviate much from its mean
+position, approximately a straight line. The reason of this
+is that the circles described by the extremities of the
+radial bars have their concavities turned in opposite
+direction, and the tracer being half-way between, describes a
+curve which is concave neither one way nor the other, and
+is therefore a straight line. The curve is not, however,
+accurately straight, for if I allow the tracer to describe the
+whole path it is capable of describing, it will, when it
+gets some distance from its mean position, deviate considerably
+from the straight line, and will be found to describe a
+figure 8, the portions at the crossing being nearly straight.
+We know that they are not quite straight, because it is
+impossible to have such a curve partly straight and partly
+curved.</p>
+
+<p>
+For many purposes the straight line described by Watt’s
+apparatus is sufficiently accurate, but if we require an exact
+one it will, of course, not do, and we must try again. Now
+it is capable of proof that it is impossible to solve the
+problem with three moving links; closer approximations
+to the truth than that given by Watt can be obtained, but
+still not actual truth.</p>
+
+<p>
+I have here some examples of them closer approximations.
+The first of these, shown in <a href="#fig03_">Fig.&nbsp;3</a>, is due to Richard
+Roberts of Manchester.</p>
+
+<a name="fig03_"><hr>
+<a onclick="if (preloadFlag_III == false) {
+preloadImage_III(); changeImages_III('fig03','fig/03anim.gif'); }
+else { changeImages_III('fig03','fig/03.gif'); preloadFlag_III = false; };">
+<center><img name="fig03" src="fig/03.gif"><br>
+<font size="-1"><br>Fig. 3</font></center></a>
+<hr></a>
+
+<p>
+The radial bars are of equal length, the distance
+between the fixed pivots is twice that of the pivots on the
+traversing piece, and the tracer is situate on the traversing
+piece, at a distance from the pivots on it equal to the lengths
+of the radial bars. The tracer in consequence coincides
+with the straight line joining the fixed pivots at those
+pivots and half-way between them. It does not, however,
+coincide at any other points, but deviates very slightly
+between the fixed pivots.  The path described by the
+tracer when it passes the pivots altogether deviates from
+the straight line.</p>
+
+<p>
+<table align="right" border="0" cellspacing="0" cellpadding="0"><tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a name="fig04_">
+<hr style="{margin-top:0em;}">
+<a onclick="if (preloadFlag_IV == false) {
+preloadImage_IV(); changeImages_IV('fig04','fig/04anim.gif'); }
+else { changeImages_IV('fig04','fig/04.gif'); preloadFlag_IV = false; };">
+<center><img name="fig04" src="fig/04.gif"><br>
+<font face="New Century Schoolbook" size="4"><br>Fig. 4</font></center></a>
+<hr style="{margin-bottom:0em;}"></a>
+</td>
+</tr></table></p>
+
+<p>
+The other apparatus was invented by Professor Tche-bicheff of
+St.&nbsp;Petersburg. It is shown in <a href="#fig04_">Fig.&nbsp;4</a>. The radial
+bars are equal in length, being each in my little model
+five inches long. The distance between the fixed pivots
+must then be four inches and the distance between the
+pivots or the traversing bar two inches. The tracer is
+taken half-way between these last.   If now we draw a
+straight line—I had forgotten that we cannot do that
+yet, well, if we draw a straight line, popularly so called—through
+the tracer in its mean position, as shown in
+the figure, parallel to that forming the fixed pivots, it
+will be found that the tracer will coincide with that line at
+the points where verticals through the fixed pivots cut it as
+well as at the mean position, but, as in the case of Roberts’s
+parallel motion, it coincides nowhere else, though its deviation
+is very small as long as it remains between the verticals.</p>
+
+<p>
+We have failed then with three links, and we must go on
+to the next case, a five-link motion—for you will observe
+that we must have an odd number of links if we want an
+apparatus describing definite curves.   Can we solve the
+problem with five? Well, we can; but this was not the
+first accurate parallel motion discovered, and we must give
+the first inventor his due (although he did not find the
+simplest way) and proceed in strict chronological order.</p>
+
+<p>
+In 1864, eighty years after Watt’s discovery, the problem
+was first solved by M.&nbsp;Peaucellier, an officer of Engineers
+in the French army. His discovery was not at first estimated
+at its true value, fell almost into oblivion, and was
+rediscovered by a Russian student named Lipkin, who got
+a substantial reward from the Russian Government for his
+supposed originality.   However, M.&nbsp;Peaucellier’s merit
+has at last been recognized, and he has been awarded the
+great mechanical prize of the Institute of France, the
+“Prix Montyon.”</p>
+
+<p>
+M.&nbsp;Peaucellier’s apparatus is shown in <a href="#fig05_">Fig.&nbsp;5.</a> It has,
+as you see, seven pieces or links. There are first of all
+two long links of equal length. These are both pivoted at
+the same fixed point; their other extremities are pivoted to
+opposite angles of a rhombus composed of four equal shorter
+links. The portion of the apparatus I have thus far
+described, considered apart from the fixed base, is a linkage
+termed a “Peaucellier cell.” We then take an <i>extra</i> link,
+and pivot it to a fixed point whose distance from the first
+fixed point, that to which the cell is pivoted, is the same as
+the length of the extra link; the other end of the extra
+link is then pivoted to one of the free angles of the
+rhombus; the other free angle of the rhombus has a pencil
+at its pivot. That pencil will accurately describe a straight
+line.</p>
+
+<a name="fig05_"><hr style="{margin-bottom:.5em;}">
+<a onclick="if (preloadFlag_V == false) {
+preloadImage_V(); changeImages_V('fig05','fig/05anim.gif'); }
+else { changeImages_V('fig05','fig/05.gif'); preloadFlag_V = false; };">
+<center><img name="fig05" src="fig/05.gif"><br>
+<font size="-1"><br>Fig. 5</font></center></a>
+<hr style="{margin-top:.5em;}"></a>
+
+<p>
+I must now indulge in a little simple geometry. It is
+absolutely necessary that I should do so in order that you
+may understand the principle of our apparatus.</p>
+
+<p>
+In <a href="#fig06_">Fig.&nbsp;6</a>, <i>QC</i> is the extra link pivoted to the fixed point
+<i>Q</i>, the other pivot on it <i>C</i>, describing the circle <i>OCR</i>. The
+straight lines <i>PM</i> and
+<i>P'M'</i> are supposed to be perpendicular
+to <i>MRQOM'</i>.</p>
+
+<a name="fig06_"><hr>
+<center>
+<img src="fig/06.gif"><br>
+<font size="-1"><br>Fig. 6</font>
+</center>
+<hr></a>
+
+<p>
+Now the angle <i>OCR</i>, being the angle in a semicircle, is
+a right angle. Therefore the triangles <i>OCR</i>, <i>OMP</i> are
+similar. Therefore,</p>
+
+<p class="displaymath">
+<i>OC</i>&nbsp;:&nbsp;<i>OR</i>&nbsp;=&nbsp;<i>OM</i>&nbsp;:&nbsp;<i>OP</i>.</p>
+
+<p class="noindent">
+Therefore,</p>
+
+<p class="displaymath">
+<i>OC</i>&nbsp;&#8901;&nbsp;<i>OP</i>&nbsp;=&nbsp;<i>OM</i>&nbsp;&#8901;&nbsp;<i>OR</i>,</p>
+
+<p class="noindent">
+wherever <i>C</i> may be on the circle. That is, since <i>OM</i> and
+<i>OR</i> are both constant, if while <i>C</i> moves in a circle <i>P</i> moves
+so that <i>O</i>, <i>C</i>, <i>P</i> are always in the same straight line, and
+so that <i>OC</i>&nbsp;&#8901;&nbsp;<i>OP</i>
+is always constant; then <i>P</i> will describe
+the straight line <i>PM</i> perpendicular to the line <i>OQ</i>.</p>
+
+<p>
+It is also clear that if we take the point
+<i>P'</i> on the other
+side of <i>O</i>, and if <i>OC</i>&nbsp;&#8901;&nbsp;<i>OP'</i>
+is constant <i>P'</i> will describe the straight line
+<i>P'M'</i>.
+This will be seen presently to be important.</p>
+
+<p>
+Now, turning to <a href="#fig07_">Fig.&nbsp;7</a>, which is a skeleton drawing of
+the Peaucellier cell, we see that from the symmetry of the
+construction of the cell, <i>O</i>, <i>C</i>, <i>P</i>, all lie
+in the same straight
+line, and if the straight line <i>An</i> be drawn perpendicular
+to <i>CP</i>&nbsp;&#8212;  it must still be an imaginary one, as we have not
+proved yet that our apparatus does draw a straight line&nbsp;&#8212; <i>Cn</i>
+is equal to <i>nP</i>.</p>
+
+<a name="fig07_"><hr>
+<center>
+<img src="fig/07.gif"><br>
+<font size="-1"><br>Fig. 7</font>
+</center>
+<hr></a>
+
+<p>
+Now,</p>
+
+<p class="displaymath">
+<i>OA</i><sup>2</sup>&nbsp;=&nbsp;<i>On</i><sup>2</sup>&nbsp;+&nbsp;<i>An</i><sup>2</sup>,<br>
+<i>AP</i><sup>2</sup>&nbsp;=&nbsp;<i>Pn</i><sup>2</sup>&nbsp;+&nbsp;<i>An</i><sup>2</sup>,
+</p>
+
+<p class="noindent">
+therefore,</p>
+
+<p class="displaymath">
+<i>OA</i><sup>2</sup>&nbsp;&minus;&nbsp;<i>AP</i><sup>2</sup>&nbsp;=&nbsp;<i>On</i><sup>2</sup
+>&nbsp;&minus;&nbsp;<i>Pn</i><sup>2</sup>&nbsp;=&nbsp;(<i>On</i>&nbsp;&minus;&nbsp;<i>Pn</i
+>)(<i>On</i>&nbsp;+&nbsp;<i>Pn</i>)&nbsp;=&nbsp;<i>OC</i>&nbsp;&#8901;&nbsp;<i>OP</i>.
+</p>
+
+<p class="noindent">
+Thus since <i>OA</i> and <i>AP</i> are both constant
+<i>OC&nbsp;&#8901;&nbsp;OP</i> is
+always constant, however far or near <i>C</i> and <i>P</i> may be to <i>O</i>.
+If then the pivot <i>O</i> be fixed to the point <i>O</i> in
+<a href="#fig06_">Fig.&nbsp;6</a>, and
+the pivot <i>C</i> be made to describe the circle in the figure by
+being pivoted to the end of the extra link, the pivot <i>P</i> will
+satisfy all the conditions necessary to make it move in a
+straight line, and if a pencil be fixed at <i>P</i> it will draw a
+straight line.   The distance of the line from the fixed
+pivots will of course depend on the magnitude of the
+quantity <i>OA</i><sup>2</sup>&nbsp;&minus;&nbsp;<i>OP</i><sup>2</sup>
+which may be varied at pleasure.</p>
+
+<p>
+I hope you clearly understand the two elements composing the apparatus, 
+the extra link and the cell, and the part each plays, as I now wish 
+to describe to you some modifications of the cell. The extra link will remain the
+same as before, and it is only the cell which will undergo alteration.</p>
+
+<a name="fig08_"><hr>
+<center>
+<a onclick="if (preloadFlag_VIII_I == false) {
+preloadImage_VIII_I(); changeImages_VIII_I('fig081','fig/081anim.gif'); }
+else { changeImages_VIII_I('fig081','fig/081.gif'); preloadFlag_VIII_I = false; };">
+<img name="fig081" src="fig/081.gif"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a onclick="if (preloadFlag_VIII_II == false) {
+preloadImage_VIII_II(); changeImages_VIII_II('fig082','fig/082anim.gif'); }
+else { changeImages_VIII_II('fig082','fig/082.gif'); preloadFlag_VIII_II = false; };">
+<img name="fig082" src="fig/082.gif"></a><br>
+<font size="-1"><br>Fig. 8</font></center>
+<hr></a>
+
+<p>
+If I take the two linkages in <a href="#fig08_">Fig.&nbsp;8</a>, which are known
+as the “kite” and the “spear-head,” and place one on the
+other so that the long links of the one coincide with those
+of the other, and then amalgamate the coincident long links
+together, we shall get the original cell of
+<a href="#fig05_">Figs.&nbsp;5</a> and <a href="#fig07_">7</a>.
+If then we keep the angles between the long links,
+or that between the short links, the same in the “kite” and
+“spear-head,” we see that the height of the “kite”
+multiplied by that of the “spear-head” is constant.</p>
+
+<a name="fig09_"><hr>
+<a onclick="if (preloadFlag_IX == false) {
+preloadImage_IX(); changeImages_IX('fig09','fig/09anim.gif'); }
+else { changeImages_IX('fig09','fig/09.gif'); preloadFlag_IX = false; };">
+<center><img name="fig09" src="fig/09.gif"><br>
+<font size="-1"><br>Fig. 9</font></center></a>
+<hr></a>
+
+<p>
+Let us now, instead of amalgamating the long links of
+the two linkages, amalgamate the short ones. We then get
+the linkage of <a href="#fig09_">Fig.&nbsp;9</a>; and if the pivot where the short
+links meet is fixed, and one of the other free pivots be
+made to move in the circle of <a href="#fig06_">Fig.&nbsp;6</a> by the extra link,
+the other will describe, not the straight line <i>PM</i>, but the
+straight line
+<i>P</i><font face="Symbol">¢</font><i>M</i><font face="Symbol">¢</font>.
+In this form, which is a very compact
+one, the motion has been applied in a beautiful manner
+to the air engines which are employed to ventilate the
+Houses of Parliament. The ease of working and absence
+of friction and noise is very remarkable.   The engines
+were constructed and the Peaucellier apparatus adapted to
+them by Mr.&nbsp;Prim, the engineer to the Houses, by whose
+courtesy I have been enabled to see them, and I can assure
+you that they are well worth a visit.</p>
+
+<p><a name="fig10_">Another</a>
+modification of the cell is shown in <a href="#fig10_">Fig.&nbsp;10</a>.
+If instead of employing a “kite” and “spear-head” of the
+<table align="right" border="0" cellspacing="0" cellpadding="0"><tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><hr style="{margin-top:1em;}">
+<a onclick="if (preloadFlag_X == false) {
+preloadImage_X(); changeImages_X('fig10','fig/10anim.gif'); }
+else { changeImages_X('fig10','fig/10.gif'); preloadFlag_X = false; };">
+<center><img name="fig10" src="fig/10.gif"><br>
+<font face="New Century Schoolbook" size="4"><br>Fig. 10</font></center></a>
+<hr style="{margin-bottom:.25em;}"></td>
+</tr></table>same dimensions, I take the same “kite” as before, but
+use a “spear-head” of half the size of the former one,
+the angles being however kept the same, the product of the
+heights of the two figures will be half what it was before,
+but still constant. Now instead of superimposing the
+links of one figure on the other, it will be seen that in
+<a href="#fig10_">Fig.&nbsp;10</a> I fasten the shorter links of each figure together, end
+to end. Then, as in the former cases, if I fix the pivot at
+the point where the links are fixed together, I get a cell
+which may be used, by the employment of an extra link, to
+describe a straight line. A model employing this form of
+cell is exhibited in the Loan Collection by the Conservatoire
+des Arts et M&#233;tiers of Paris, and is of exquisite workmanship;
+the pencil seems to swim along the straight line.</p>
+
+<p>
+<a name="note05_">M.&nbsp;Peaucellier’s
+discovery was introduced into England
+by Professor Sylvester in a lecture he delivered at the
+Royal Institution in January, 1874 </a><a href="#note05">(5)</a>,
+which excited very
+great interest and was the commencement of the consideration
+of the subject of linkages in this country.</p>
+
+<p>
+<a name="note06_">In
+August of the same year Mr.&nbsp;Hart of Woolwich
+Academy read a paper at the British Association meeting
+</a><a href="#note06">(6)</a>,
+in which he showed that M.&nbsp;Peaucellier’s cell could be
+replaced by an apparatus containing only four links instead
+of six. The new linkage is arrived at thus.</p>
+
+<a name="fig11_"><hr>
+<a onclick="if (preloadFlag_XI == false) {
+preloadImage_XI(); changeImages_XI('fig11','fig/11anim.gif'); }
+else { changeImages_XI('fig11','fig/11.gif'); preloadFlag_XI = false; };">
+<center><img name="fig11" src="fig/11.gif"><br>
+<font size="-1"><br>Fig. 11</font></center></a>
+<hr></a>
+
+<p>
+If to the ordinary Peaucellier cell I add two fresh links
+of the same length as the long ones I get the double, or
+rather quadruple cell, for it may be used in four different
+ways, shown in <a href="#fig11_">Fig.&nbsp;11</a>.
+Now Mr.&nbsp;Hart found that if he
+took an ordinary parallelogrammatic linkwork, in which the
+adjacent sides are unequal, and crossed the links so as to
+form what is called a contra-parallelogram, <a href="#fig12_">Fig.&nbsp;12</a>, and
+then took four points on the four links dividing the distances
+between the pivots in the same proportion, those
+four points had exactly the same properties as the four
+points of the double cell. That the four points always lie
+in a straight line is seen thus: considering the triangle
+<i>abd</i>, since
+<i>aO</i>&nbsp;:&nbsp;<i>Ob</i>&nbsp;= <i>aP</i>&nbsp;:&nbsp;<i>Pd</i>
+therefore <i>OP</i> is parallel to
+<i>bd</i>, and the perpendicular distance between the parallels is
+to the height of the triangle <i>abd</i> as <i>Ob</i> is to
+<i>ab</i>; the same reasoning applies to the straight line
+<i>CO</i><font face="Symbol">¢</font>, and since
+<i>ab</i>&nbsp;:&nbsp;<i>Ob</i>&nbsp;=&nbsp;<i>cd</i>&nbsp;:&nbsp;<i
+>O</i><font face="Symbol">¢</font><i>d</i> and the heights of
+the triangles <i>abd</i>, <i>cbd</i>, are clearly the same,
+therefore the distances of <i>OP</i> and <i>O</i><font
+face="Symbol">¢</font><i>C</i> from <i>bd</i> are the same,
+and <i>OCPO</i><font face="Symbol">¢</font> lie in the same
+straight line.</p>
+
+<a name="fig12_"><hr>
+<a onclick="if (preloadFlag_XII == false) {
+preloadImage_XII(); changeImages_XII('fig12','fig/12anim.gif'); }
+else { changeImages_XII('fig12','fig/12.gif'); preloadFlag_XII = false; };">
+<center><img name="fig12" src="fig/12.gif"><br>
+<font size="-1"><br>Fig. 12</font></center></a>
+<hr></a>
+
+<p>
+That the product <i>OC</i>&nbsp;<font face="Symbol">×</font>&nbsp;<i>OP</i>
+is constant appears at once
+when it is seen that <i>ObC</i> is half a “spear-head” and <i>OaP</i>
+half a “kite;” similarly it may be shown that
+<i>O</i><font face="Symbol">¢</font><i>P</i>&nbsp;<font
+face="Symbol">×</font>&nbsp;<i>O</i><font face="Symbol">¢</font><i>C</i> is
+constant, as also <i>OC</i>&nbsp;<font face="Symbol">×</font>&nbsp;<i>CO</i><font
+face="Symbol">¢</font> and <i>OP</i>&nbsp;<font
+face="Symbol">×</font>&nbsp;<i>PO</i><font face="Symbol">¢</font>.
+Employing then the
+Hart’s cell as we employed Peaucellier’s, we get a five-link
+straight line motion. A model of this is exhibited in the
+Loan Collection by M.&nbsp;Breguet.</p>
+
+<p>
+I now wish to call your attention to an extension of Mr.&nbsp;Hart’s
+apparatus, which was discovered simultaneously by
+Professor Sylvester and myself. In Mr.&nbsp;Hart’s apparatus
+we were only concerned with bars and points on those bars,
+but in the apparatus I wish to bring before you we have
+pieces instead of bars. I think it will be more interesting
+if I lead up to this apparatus by detailing to you its
+history, especially as I shall thereby be enabled to bring
+before you another very elegant and very important
+linkage—the discovery of Professor Sylvester.</p>
+
+<p>
+When considering the problem presented by the ordinary
+three-<i>bar</i> motion consisting of two radial bars and
+a traversing bar, it occurred to me—I do not know how or why,
+it is often very difficult to go back and find whence one’s
+ideas originate—to consider the relation between the curves
+described by the points on the traversing bar in any given
+three-bar motion, and those described by the points on
+a similar three-bar motion, but in which the traversing bar
+and one of the radial ban had been made to change places.
+The proposition was no sooner stated than the solution became
+obvious; the curves were precisely similar.
+In <a href="#fig13_">Fig.&nbsp;13</a>
+let <i>CD</i> and <i>BA</i> be the two radial bars turning about the
+fixed centres <i>C</i> and <i>B</i>, and let <i>DA</i> be the traversing bar,
+and let <i>P</i> be any point on it describing a curve depending
+on the lengths of <i>AB</i>, <i>BC</i>, <i>CD</i>, and <i>DA</i>.
+<table align="left" border="0" cellspacing="0" cellpadding="0"><tr>
+<td><a name="fig13_">
+<hr style="{margin-top:1em;}">
+<a onclick="if (preloadFlag_XIII == false) {
+preloadImage_XIII(); changeImages_XIII('fig13','fig/13anim.gif'); }
+else { changeImages_XIII('fig13','fig/13.gif'); preloadFlag_XIII = false; };">
+<center><img name="fig13" src="fig/13.gif"><br>
+<font face="New Century Schoolbook" size="4"><br>Fig. 13</font></center></a>
+<hr style="{margin-bottom:0em;}"></a>
+</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr></table>
+How add to the
+three-bar motion the bars <i>CE</i> and <i>EAP</i><font face="Symbol">¢</font>,
+<i>CE</i> being equal to <i>DA</i>, and <i>EA</i> equal to <i>CD</i>.
+<i>CDAE</i> is then a parallelogram,
+and if an imaginary line <i>CPP</i><font face="Symbol">¢</font> be drawn,
+cutting <i>EA</i> pro-duced in <i>P</i><font face="Symbol">¢</font>,
+it will at once be seen that <i>P</i><font face="Symbol">¢</font> is a fixed point
+on <i>EA</i> produced, and <i>CP</i><font face="Symbol">¢</font>
+bears always a fixed proportion to <i>CP</i>, viz., <i>CD</i>&nbsp;:&nbsp;<i>CE</i>.
+Thus the curve described by <i>P</i><font face="Symbol">¢</font>
+is precisely the same as that described by <i>P</i>, only it is larger in
+the proportion <i>CE</i>&nbsp;:&nbsp;<i>CD</i>.
+<a name="note07_">Thus if we take away the bars
+<i>CD</i> and <i>DA</i>, we shall get a three-bar linkwork, describing
+precisely the same curves, only of different magnitude, as
+our first three-bar motion described, and this new three-bar
+linkwork is the same as the old with the radial link <i>CD</i>
+and the traversing link <i>DA</i> interchanged
+</a><a href="#note07">(7)</a>.</p>
+
+<p>
+On my communicating this result to Professor Sylvester,
+he at once saw that the property was one not confined to
+the particular case of points lying on the traversing bar,
+in fact to three-<i>bar</i> motion, but was possessed by three-<i>piece</i>
+motion.
+In <a href="#fig14_">Fig.&nbsp;14</a>
+<i>CDAB</i> is a three-bar motion, as in
+<a href="#fig13_">Fig.&nbsp;13</a>,
+<table align="right" border="0" cellspacing="0" cellpadding="0"><tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a name="fig14_">
+<hr style="{margin-top:1em;}">
+<a onclick="if (preloadFlag_XIV == false) {
+preloadImage_XIV(); changeImages_XIV('fig14','fig/14anim.gif'); }
+else { changeImages_XIV('fig14','fig/14.gif'); preloadFlag_XIV = false; };">
+<center><img name="fig14" src="fig/14.gif"><br>
+<font face="New Century Schoolbook" size="4"><br>Fig. 14</font></center></a>
+<hr style="{margin-bottom:.5em;}"></a>
+</td>
+</tr></table>but the tracing point or “graph” does not lie on
+the line joining the joints <i>AD</i>, but in anywhere else on a
+“piece” on which the joints <i>AD</i> lie. Now, as before, add
+the bar <i>CE</i>, <i>CE</i> being equal to
+<i>AD</i>, and the piece
+<i>AEP</i><font face="Symbol">¢</font>,
+making <i>AE</i> equal to <i>CD</i>, and the triangle
+<i>AEP</i><font face="Symbol">¢</font> similar to the
+triangle <i>PDA</i>; so that the angles
+<i>AEP</i><font face="Symbol">¢</font>, <i>ADP</i> are equal, and</p>
+
+<p class="displaymath">
+<i>P</i><font face="Symbol">¢</font><i>E</i>&nbsp;:&nbsp;<i>EA</i>&nbsp;=&nbsp;<i
+>AD</i>&nbsp;:&nbsp;<i>DP</i>.</p>
+
+<p class="noindent">
+It follows easily from this—you can work it out for yourselves
+without difficulty—that the ratio <i>P</i><font
+face="Symbol">¢</font><i>C</i>&nbsp;:&nbsp;<i>PC</i>
+is constant and the angle <i>PCP</i><font face="Symbol">¢</font>
+is constant; thus the paths of
+<i>P</i> and <i>P</i><font face="Symbol">¢</font>, or the “grams”
+described by the “graphs,” <i>P</i>
+and <i>P</i><font face="Symbol">¢</font>, are similar,
+only they are of different sizes, and one
+is turned through an angle with respect to the other.</p>
+
+<p>
+Now you will observe that the two proofs I have given
+are quite independent of the bar <i>AB</i>, which only affects
+the particular curve described by <i>P</i> and
+<i>P</i><font face="Symbol">¢</font>. If we get rid
+of <i>AB</i>, in both cases we shall get in the first figure the
+ordinary pantagraph, and in the second a beautiful extension
+of it, called by Professor Sylvester, its inventor, the
+<i>Plagiograph</i> or <i>Skew Pantagraph</i>. Like the Pantagraph, it
+will enlarge or reduce figure but it will do more, it will
+turn them through any required angle, for by properly
+choosing the position of <i>P</i> and <i>P</i><font face="Symbol">¢</font>,
+the ratio of <i>CP</i> to
+<i>CP</i><font face="Symbol">¢</font> can be made what we please, and also the angle
+<i>PCP</i><font face="Symbol">¢</font> can be made to have any required value. If the
+angle <i>PCP</i><font face="Symbol">¢</font> is made equal to 0 or 180&deg;, we get the two
+forms of the pantagraph now in common use; if it be
+made to assume successively any value which is a submultiple
+of 360&deg;, we can, by passing the point <i>P</i> each time
+over the same pattern make the point <i>P</i><font face="Symbol">¢</font> reproduce it
+round the fixed centre <i>C</i> after the fashion of a kaleidoscope.
+<a name="note08_">I
+think you will see from this that the instrument, which
+has, as far as I know, never been practically constructed,
+deserves to be put into the hands of the designer. I give
+here a picture of a little model of a possible form for the
+instrument furnished by me to the Loan Collection by
+request of Professor Sylvester </a><a href="#note08">(8)</a>
+(<a href="#fig15_">Fig.&nbsp;15</a>).</p>
+
+<a name="fig15_"><hr style="{margin-bottom:.2em;}">
+<center>
+<img src="fig/15.gif">&nbsp;&nbsp;&nbsp;
+<font size="-1">Fig. 15</font>
+</center>
+<hr style="{margin-top:.2em;}"></a>
+
+<p>
+After this discovery of Professor Sylvester, it occurred to
+him and to me simultaneously—our letters announcing our
+discovery to each other crossing in the post—that the
+principle of the plagiograph might be extended to
+Mr.&nbsp;Hart’s contra-parallelogram; and this discovery I shall
+now proceed to explain to you. I shall, however, be
+more easily able to do so by approaching it in a different
+manner to that in which I did when I discovered it.</p>
+
+<p>
+If we take the contra-parallelogram of Mr.&nbsp;Hart, and
+bend the links at the four points which lie on the same
+straight line, or <i>foci</i> as they are sometimes termed,
+through the same angle, the four points, instead of
+lying in the same straight line, will lie at the four angular
+points of a parallelogram of constant angles,—two the angle
+that the bars are bent through, and the other two their
+supplements—and of constant area, so that the product
+of two adjacent sides is constant.</p>
+
+<p>
+In <a href="#fig16_">Fig.&nbsp;16</a> the lettering
+is preserved as in <a href="#fig12_">Fig.&nbsp;12</a>, so
+that the way in which the apparatus is formed may be at
+once seen. The holes are taken in the middle of the links, and
+the bending is through a right angle. The four holes
+<i>OPO</i><font face="Symbol">¢</font><i>C</i> lie at the
+four corners of a right-angled parallelogram, and the
+product of any two adjacent sides, as for
+example <i>OC</i>&nbsp;<font face="Symbol">×</font>&nbsp;<i>OP</i>,
+is constant. It follows that if <i>O</i> be
+pivoted to the fixed point <i>O</i> in <a href="#fig06_">Fig.&nbsp;6</a>,
+and <i>C</i> be pivoted to
+the extremity of the extra link, <i>P</i> will describe a straight
+line, not <i>PM</i>, but one inclined to <i>PM</i> at an angle the same
+as the bars are bent through, i.e. a right angle. Thus the
+straight line will be parallel to the line joining the fixed
+pivots <i>O</i> and <i>Q</i>. This apparatus, which for simplicity I
+have described as formed of four straight links which are
+afterwards bent, is of course strictly speaking formed of
+four plane links, such as those employed in
+<a href="#fig01_">Fig.&nbsp;1</a>, on which
+the various points are taken.  This explains the name
+given to it by Professor Sylvester, the “Quadruplane.”
+Its properties are not difficult to investigate, and when I
+point out to you that in
+<a href="#fig16_">Fig.&nbsp;16</a>, as in
+<a href="#fig12_">Fig.&nbsp;12</a>, <i>Ob</i>, <i>bC</i> form
+half a “spear-head,” and <i>Oa</i>, <i>aP</i> half a “kite,” you will
+very soon get to the bottom of it.</p>
+
+<a name="fig16_"><hr style="{margin-bottom:.5em;}">
+<a onclick="if (preloadFlag_XVI == false) {
+preloadImage_XVI(); changeImages_XVI('fig16','fig/16anim.gif'); }
+else { changeImages_XVI('fig16','fig/16.gif'); preloadFlag_XVI = false; };">
+<center><img name="fig16" src="fig/16.gif"><br>
+<font size="-1"><br>Fig. 16</font></center></a>
+<hr style="{margin-top:.5em;}"></a>
+
+<p>
+I cannot leave this apparatus, in which my name is
+associated with that of Professor Sylvester, without expressing
+my deep gratitude for the kind interest which he took
+in my researches, and my regret that his departure for
+America to undertake the post of Professor in the new
+Johns Hopkins University has deprived me of one whose
+valuable suggestions and encouragement helped me much
+in my investigations.</p>
+
+<p>
+Before leaving the Peaucellier cell and its modifications,
+I must point out another important property they possess
+besides that of furnishing us with exact rectilinear motion.
+We have seen that our simplest linkwork enables us to
+describe a circle of any radius, and if we wished to describe
+one of ten miles’ radius the proper course would be to have
+a ten-mile link, but as that would be, to say the least,
+cumbrous, it is satisfactory to know that we can effect our
+purpose with a much smaller apparatus. When the Peaucellier
+cell is mounted for the purpose of describing a
+straight line, as I told you, the distance between the fixed
+pivots must be the same as the length of the “extra” link.
+If this distance be not the same we shall not get straight
+lines described by the pencil, but circles. If the difference
+be slight the circles described will be of enormous magnitude,
+decreasing in size as the difference increases. If the
+distance <i>QO</i>,
+<a href="#fig06_">Fig.&nbsp;6</a>, be made greater than <i>QC</i>,
+the convexity of the portion of the circle described by the pencil
+(for if the circles are large it will of course be only a
+portion which is described) will be towards <i>O</i>, if less
+the concavity. To a mathematician, who knows that the
+inverse of a circle is a circle, this will be clear, but it may
+not be amiss to give here a short proof of the proposition.</p>
+
+<a name="fig17_"><hr>
+<center>
+<img src="fig/17.gif"><br>
+<font size="-1"><br>Fig. 17</font>
+</center>
+<hr></a>
+
+<p>
+In <a href="#fig17_">Fig.&nbsp;17</a> let the
+centres <i>Q</i>, <i>Q</i><font face="Symbol">¢</font>
+of the two circles be at
+distances from <i>O</i> proportional to the radii of the circles.
+If then <i>ODCPS</i> be any straight line through <i>O</i>, <i>DQ</i>
+will be parallel to <i>PQ</i><font face="Symbol">¢</font>,
+and <i>CQ</i> to <i>SQ</i><font face="Symbol">¢</font>, and <i>OD</i> will
+bear the same proportion to <i>OP</i> that <i>OQ</i> does to
+<i>OQ</i><font face="Symbol">¢</font>.
+Now considering the proof we gave in connection with
+<a href="#fig07_">Fig.&nbsp;7</a>,
+it will be clear that the product <i>OD</i>&nbsp;<font
+face="Symbol">×</font>&nbsp;<i>OC</i> is constant,
+and therefore since <i>OP</i> bears a constant ratio to <i>OD</i>,
+<i>OP</i>&nbsp;<font face="Symbol">×</font>&nbsp;<i>OC</i> is constant.
+That is if <i>OC</i>&nbsp;<font face="Symbol">×</font>&nbsp;<i>OP</i> is constant and
+<i>C</i> describes a circle about <i>Q</i>, <i>P</i> will describe one
+about <i>Q</i><font face="Symbol">¢</font>.
+Taking then <i>O</i>, <i>C</i> and <i>P</i> as the <i>O</i>, <i>C</i> and <i>P</i> of the Peaucellier
+cell in <a href="#fig07_">Fig.&nbsp;7</a>,
+we see how <i>P</i> comes to describe a circle.</p>
+
+<p>
+It is hardly necessary for me to state the importance of
+the Peaucellier compass in the mechanical arts for drawing
+circles of large radius. Of course the various modifications
+of the “cell” I have described may all be employed for
+the purpose. The models exhibited by the Conservatoire
+and M.&nbsp;Breguet are furnished with sliding pivots for the
+purpose of varying the distance between <i>O</i> and <i>Q</i>, and
+thus getting circles of any radius.</p>
+
+<p>
+<a name="note09_">My
+attention was first called to these linkworks by the
+lecture of Professor Sylvester, to which I have referred.
+A passage in that lecture in which it was stated that there
+were probably other forms of seven-link parallel motions
+besides M.&nbsp;Peaucellier’s, then the only one known, led me
+to investigate the subject, and I succeeded in obtaining
+some new parallel motions of an entirely different character
+<table align="right" border="0" cellspacing="0" cellpadding="0"><tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a name="fig18_">
+<hr style="{margin-top:1em;}">
+<a onclick="if (preloadFlag_XVIII == false) {
+preloadImage_XVIII(); changeImages_XVIII('fig18','fig/18anim.gif'); }
+else { changeImages_XVIII('fig18','fig/18.gif'); preloadFlag_XVIII = false; };">
+<center><img name="fig18" src="fig/18.gif"><br>
+<font face="New Century Schoolbook" size="4"><br>Fig. 18</font></center></a>
+<hr style="{margin-bottom:.5em;}"></a>
+</td>
+</tr></table>to that of M.&nbsp;Peaucellier </a><a href="#note09">(9)</a>.
+I shall bring two of these
+to your notice, as the investigation of them will lead us to
+consider some other linkworks of importance.</p>
+
+<p>
+If I take two kites, one twice as big as the other, such
+that the long links of each are twice the length of the short
+ones, and make one long link of the small kite lie on
+a short one of the large, and a short one of the small on
+a long one of the large, and then amalgamate the coincident
+links, I shall get the linkage shown in
+<a href="#fig18_">Fig.&nbsp;18</a>.</p>
+
+<p>
+The important property of this linkage is that, although
+we can by moving the links about, make the points <i>P</i> and
+<i>P</i><font face="Symbol">¢</font> approach
+to or recede from each other, the imaginary
+line joining them is always perpendicu-lar to that drawn
+through the pivots on the bottom link <i>LM</i>. It follows
+that if either of the pivots <i>P</i> or
+<i>P</i><font face="Symbol">¢</font> be fixed, and the link
+<i>LM</i> be made to move so as always to remain parallel to
+a fixed line, the other point will describe a straight line
+perpendicular to
+<table align="left" border="0" cellspacing="0" cellpadding="0"><tr>
+<td><a name="fig19_">
+<hr style="{margin-top:.75em;}">
+<a onclick="if (preloadFlag_XIX == false) {
+preloadImage_XIX(); changeImages_XIX('fig19','fig/19anim.gif'); }
+else { changeImages_XIX('fig19','fig/19.gif'); preloadFlag_XIX = false; };">
+<center><img name="fig19" src="fig/19.gif"><br>
+<font face="New Century Schoolbook" size="4"><br>Fig. 19</font></center></a>
+<hr style="{margin-bottom:.25em;}"></a>
+</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr></table><a href="#fig19_">the fixed line. Fig.&nbsp;19</a> shows you the
+parallel motion made by fixing <i>P</i><font face="Symbol">¢</font>.
+It is unnecessary for
+me to point out how the parallelism of <i>LM</i> is pre-served
+by adding the link <i>SL</i>, it is obvious from the figure. The
+straight line which is de-scribed by the point <i>P</i> is
+per-pendicular to the line joining the two fixed pivots; we can,
+however, without increasing the number of links, make a point
+on the linkwork describe a straight line inclined to the line
+<i>SP</i><font face="Symbol">¢</font>
+at any angle, or rather we can, by substituting for the
+straight link <i>PC</i> a plane piece, get a number of points on
+that piece moving in every direction.</p>
+
+<a name="fig20_"><hr style="{margin-bottom:.25em;}">
+<a onclick="if (preloadFlag_XX == false) {
+preloadImage_XX(); changeImages_XX('fig20','fig/20anim.gif'); }
+else { changeImages_XX('fig20','fig/20.gif'); preloadFlag_XX = false; };">
+<center><img name="fig20" src="fig/20.gif">&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="-1">Fig. 20</font></center></a>
+<hr style="{margin-top:.25em;}"></a>
+
+<p>
+In <a href="#fig20_">Fig.&nbsp;20</a>,
+for simplicity, only the link <i>CP</i><font
+face="Symbol">¢</font> and the
+new piece substituted for the link <i>PC</i> are shown. The
+new piece is circular and has holes pierced in it all at the
+same distance—the same as the lengths <i>PC</i> and
+<i>P</i><font face="Symbol">¢</font><i>C</i>—from
+<i>C</i>. Now we have seen from
+<a href="#fig19_">Fig.&nbsp;19</a> that <i>P</i> moves in
+a vertical straight line, the distance <i>PC</i> in
+<a href="#fig20_">Fig.&nbsp;20</a> being the same as it was in
+<a href="#fig19_">Fig.&nbsp;19</a>; but from a well-known
+property of a circle, if <i>H</i> be any one of the holes pierced in
+the piece, the angle <i>HP</i><font face="Symbol">¢</font><i>P</i>
+is constant, thus the straight line <i>HP</i><font face="Symbol">¢</font>
+is fixed in position, and <i>H</i> moves along it; similarly
+all the other holes move along in straight lines passing
+through the fixed pivot <i>P</i><font face="Symbol">¢</font>,
+and we get straight line
+motion distributed in all directions. This species of motion
+is called by Professor Sylvester “tram-motion.” It is
+worth noticing that the motion of the circular disc is the
+same as it would have been if the dotted circle on it rolled
+inside the large dotted circle; we have, in fact, White’s
+parallel motion reproduced by linkwork. Of course, if we
+only require motion in one direction, we may out away all
+the disc except a portion forming a bent arm containing <i>C</i>,
+<i>P</i>, and the point which moves in the required direction.</p>
+
+<p>
+The double kite of
+<a href="#fig18_">Fig.&nbsp;18</a> may be employed to form
+some other useful linkworks. It is often necessary to
+have, not a single point, but a whole piece moving so that
+all points on it move in straight lines. I may instance
+the slide rests in lathes, traversing tables, punches, drills,
+<table align="center" border="0" cellspacing="0" cellpadding="0"><tr>
+<td><a name="fig21_">
+<hr>
+<a onclick="if (preloadFlag_XXI == false) {
+preloadImage_XXI(); changeImages_XXI('fig21','fig/21anim.gif'); }
+else { changeImages_XXI('fig21','fig/21.gif'); preloadFlag_XXI = false; };">
+<center><img name="fig21" src="fig/21.gif"><br>
+<font face="New Century Schoolbook" size="4"><br>Fig. 21</font></center></a>
+<hr></a>
+</td>
+</tr></table>drawbridges, etc. The double kite enables us
+to produce linkworks
+having this property. In the linkwork
+<table align="right" border="0" cellspacing="0" cellpadding="0"><tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a name="fig22_">
+<hr style="{margin-top:0.5em;}">
+<a onclick="if (preloadFlag_XXII == false) {
+preloadImage_XXII(); changeImages_XXII('fig22','fig/22anim.gif'); }
+else { changeImages_XXII('fig22','fig/22.gif'); preloadFlag_XXII = false; };">
+<center><img name="fig22" src="fig/22.gif"><br>
+<font face="New Century Schoolbook" size="4"><br>Fig. 22</font></center></a>
+<hr style="{margin-bottom:0em;}"></a>
+</td>
+</tr></table>of <a href="#fig21_">Fig.&nbsp;21</a>, the construction
+of which will be at once appreciated if you understand the
+double kite, the horizontal link moves to and fro as if sliding
+in a fixed horizontal straight tube.  This form would possibly
+be useful as a girder for a drawbridge.</p>
+
+<p>
+In the linkwork of <a href="#fig22_">Fig.&nbsp;22</a>, which is
+another combination of two double kites, the vertical link moves
+so that all its points move in horizontal straight lines. There
+is a modifica-tion of this linkwork which will, I think, be found
+interesting. In the linkage in <a
+href="#fig23_">Fig.&nbsp;23</a>, which, if the blue links are
+removed, is a skeleton drawing of <a
+href="#fig22_">Fig.&nbsp;22</a>, let the red links be taken
+away and the blue ones be inserted; we then get a linkage which
+has the same property as that in <a
+href="#fig22_">Fig.&nbsp;22</a>, but it is seen in its new form
+to be the ordinary double parallel ruler with three added links.
+<table align="center" border="0" cellspacing="2" cellpadding="0">
+<tr><td colspan="3"><a name="fig23_"><hr></a></td></tr>
+<tr><td valign="top">
+<a onclick="if (preloadFlag_XXIII_II == false) {
+preloadImage_XXIII_II(); changeImages_XXIII_II('fig232','fig/232anim.gif'); }
+else { changeImages_XXIII_II('fig232','fig/232.gif'); preloadFlag_XXIII_II = false; };">
+<center><img name="fig232" src="fig/232.gif"></center></a>
+</td>
+<td valign="top"><a name="fig23_">
+<a onclick="if (preloadFlag_XXIII_I == false) {
+preloadImage_XXIII_I(); changeImages_XXIII_I('fig231','fig/231anim.gif'); }
+else { changeImages_XXIII_I('fig231','fig/231.gif'); preloadFlag_XXIII_I = false; };">
+<center><img name="fig231" src="fig/231.gif"><br>
+<font face="New Century Schoolbook" size="4"><br>Fig. 23</font></center></a>
+</td>
+<td valign="top">
+<a onclick="if (preloadFlag_XXIII_III == false) {
+preloadImage_XXIII_III(); changeImages_XXIII_III('fig233','fig/233anim.gif'); }
+else { changeImages_XXIII_III('fig233','fig/233.gif'); preloadFlag_XXIII_III = false; };">
+<center><img name="fig233" src="fig/233.gif"></center></a>
+</td>
+</tr>
+<tr><td colspan="3"><hr></td></tr>
+</table><a href="#fig24_">Fig.&nbsp;24</a>
+<a name="fig24_"></a>is a figure of a double
+parallel ruler made on this plan with a slight modification. If
+the bottom ruler be held horizontal the top moves vertically up
+and down the board, having no lateral movement.</p>
+
+<hr>
+<a onclick="if (preloadFlag_XXIV == false) {
+preloadImage_XXIV(); changeImages_XXIV('fig24','fig/24anim.gif'); }
+else { changeImages_XXIV('fig24','fig/24.gif'); preloadFlag_XXIV = false; };">
+<center><img name="fig24" src="fig/24.gif"><br>
+<font size="-1"><br>Fig. 24</font></center></a>
+<hr>
+
+<p>
+While I am upon this sort of movement I may point out
+an apparatus exhibited in the Loan Collection by Professor
+<table align="left" border="0" cellspacing="0" cellpadding="0"><tr>
+<td><a name="fig25_">
+<hr style="{margin-top:.8em;}">
+<a onclick="if (preloadFlag_XXV == false) {
+preloadImage_XXV(); changeImages_XXV('fig25','fig/25anim.gif'); }
+else { changeImages_XXV('fig25','fig/25.gif'); preloadFlag_XXV = false; };">
+<center><img name="fig25" src="fig/25.gif"><br>
+<font face="New Century Schoolbook" size="4"><br>Fig. 25</font></center></a>
+<hr style="{margin-bottom:0em;}"></a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr></table>Tchebicheff, which bears a strong likeness to a compli-cated
+camp-stool, the seat of which has horizontal
+motion (<a href="#fig25_">Fig.&nbsp;25</a>). The
+motion is not strictly rectilinear; the appa-ratus being—as
+will be seen by observing that the thin line in the figure
+is of invariable length, and a link might there-fore be put
+where it is—a com-bination of two of the parallel motions
+of Professor Tchebi-cheff given in
+<a href="#fig04_">Fig.&nbsp;4</a>, with some links
+added to keep the seat parallel with the base. The
+variation of the upper plane from a strictly horizontal
+movement is therefore double that of the tracer in the
+simple parallel motion.</p>
+
+<p>
+<table align="right" border="0" cellspacing="0" cellpadding="0"><tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a name="fig26_">
+<hr style="{margin-top:0em; margin-bottom:.75em;}">
+<a onclick="if (preloadFlag_XXVI == false) {
+preloadImage_XXVI(); changeImages_XXVI('fig26','fig/26anim.gif'); }
+else { changeImages_XXVI('fig26','fig/26.gif'); preloadFlag_XXVI = false; };">
+<center><img name="fig26" src="fig/26.gif"><br>
+<font face="New Century Schoolbook" size="4"><br>Fig. 26</font></center></a>
+<hr style="{margin-bottom:0em; margin-top:.75em;}"></a></td>
+</tr></table></p>
+
+<p>
+<a href="#fig26_">Fig.&nbsp;26</a>
+shows how a similar apparatus of much simpler
+construction, employing the Tchebicheff approximate paral-lel
+motion, can be made. The lengths of the links forming
+the parallel motion have been given before
+(<a href="#fig04_">Fig.&nbsp;4</a>). The
+distance be-tween the pivots on the moving seat is half that
+between the fixed pivots and the length of the remaining
+link is one-half that of the radial links.</p>
+
+<p>
+An <i>exact</i> motion of the same description is shown in
+<a href="#fig27_">Fig.&nbsp;27</a>.
+<i>O</i>, <i>C</i>, <i>O</i><font face="Symbol">¢</font>,
+<i>P</i> are the four <i>foci</i> of the quadriplane shown in
+the figure in which the links are bent through a right angle, so
+that <i>OC</i>&nbsp;<font
+face="Symbol">×</font>&nbsp;<i>OP</i> is constant,
+and <i>COP</i> a right angle. The focus <i>O</i> is pivoted to a
+fixed point, and <i>C</i> is made by means of the extra link
+<i>QC</i> to move in a circle of which the radius <i>QC</i> is
+equal to the pivot distance <i>OQ</i>, <i>P</i> consequently moves in a
+straight line parallel to <i>OQ</i>, the five moving pieces thus
+far described constituting the Sylvester—Kempe parallel motion.
+To this are added the moving seat and the remaining link
+<i>RO</i><font face="Symbol">¢</font>, the pivot distance of
+which, <i>PR</i> and <i>RO</i><font face="Symbol">¢</font>,
+are equal to <i>OQ</i>. The seat in consequence always remains
+parallel to <i>QO</i>, and as <i>P</i> moves accurately in a
+horizontal straight line, every point on it will do so also,
+This apparatus might be used with advantage where a very
+smoothly-working traversing table is required.</p>
+
+<a name="fig27_"><hr><a onclick="if (preloadFlag_XXVII == false) {
+preloadImage_XXVII(); changeImages_XXVII('fig27','fig/27anim.gif'); }
+else { changeImages_XXVII('fig27','fig/27.gif'); preloadFlag_XXVII = false; };">
+<center><img name="fig27" src="fig/27.gif"><br>
+<font face="New Century Schoolbook" size="-1"><br>Fig. 27</font></center></a>
+<hr></a>
+
+<p>
+I now come to the second of the parallel motions I said I
+would show you. If I take a kite and pivot the blunt end to
+the fixed base, and make
+the sharp end move up and down in
+a straight line, passing through the fixed pivot, the short
+links will rotate about the fixed pivot with equal velocities
+in opposite directions; and, conversely, if the links rotate
+with equal velocity in opposite directions, the path of the
+sharp end will
+<table align="center" border="0" cellspacing="0" cellpadding="0"><tr>
+<td width="990"><a name="fig28_">
+<hr><center>
+<a onclick="if (preloadFlag_XXVIII_I == false) {
+preloadImage_XXVIII_I(); changeImages_XXVIII_I('fig281','fig/281anim.gif'); }
+else { changeImages_XXVIII_I('fig281','fig/281.gif'); preloadFlag_XXVIII_I = false; };">
+<img name="fig281" src="fig/281.gif"></a>
+<a onclick="if (preloadFlag_XXVIII_II == false) {
+preloadImage_XXVIII_II(); changeImages_XXVIII_II('fig282','fig/282anim.gif'); }
+else { changeImages_XXVIII_II('fig282','fig/282.gif'); preloadFlag_XXVIII_II = false; };">
+<img name="fig282" src="fig/282.gif"></a><br>
+<font face="New Century Schoolbook" size="4"><br>Fig. 28</font></center>
+<hr></a></td>
+</tr></table>be a straight line, and the same will hold
+good if instead of the short links being pivoted to the
+same point they are pivoted to different ones
+(<a href="#fig28_">Fig.&nbsp;28</a>).</p>
+
+<p>
+<a name="note10_">To
+find a linkwork which should make two links rotate
+with equal velocities in opposite directions was one of the
+first problems I set myself to solve. There was no difficulty
+in making two links rotate with equal velocities in the same
+direction,—the ordinary parallelogram-matic linkwork employed
+in locomotive engines, composed of the engine, the two
+cranks, and the connecting rod, furnished that; and there
+was none in making two links rotate in opposite directions
+with <i>varying</i>
+<table align="center" border="0" cellspacing="0" cellpadding="0"><tr>
+<td width="990"><a name="fig29_">
+<hr><center>
+<a onclick="if (preloadFlag_XXIX_I == false) {
+preloadImage_XXIX_I(); changeImages_XXIX_I('fig291','fig/291anim.gif'); }
+else { changeImages_XXIX_I('fig291','fig/291.gif'); preloadFlag_XXIX_I = false; };">
+<img name="fig291" src="fig/291.gif"></a>
+<a onclick="if (preloadFlag_XXIX_II == false) {
+preloadImage_XXIX_II(); changeImages_XXIX_II('fig292','fig/292anim.gif'); }
+else { changeImages_XXIX_II('fig292','fig/292.gif'); preloadFlag_XXIX_II = false; };">
+<img name="fig292" src="fig/292.gif"></a><br>
+<font face="New Century Schoolbook" size="4"><br>Fig. 29</font></center>
+<hr></a></td>
+</tr></table>velocity; the contra-parallelogram gave that
+(<a href="#fig29_">Fig.&nbsp;29</a>);
+but the required linkwork had to be discovered. After some
+trouble I succeeded in obtaining it by a combination of
+a large and small contra-parallelogram put together just as
+the two kites were in the linkage of
+<a href="#fig18_">Fig.&nbsp;18</a>.
+One contra-parallelogram is made twice as large as the other, and the
+long links of each are twice as long as the short
+</a><a href="#note10">(10)</a>.</p>
+
+<a name="fig30_"><hr>
+<a onclick="if (preloadFlag_XXX == false) {
+preloadImage_XXX(); changeImages_XXX('fig30','fig/30anim.gif'); }
+else { changeImages_XXX('fig30','fig/30.gif'); preloadFlag_XXX = false; };">
+<center><img name="fig30" src="fig/30.gif"><br>
+<font size="-1"><br>Fig. 30</font></center></a>
+<hr></a>
+
+<p>
+<a name="note11_">The
+linkworks in
+<a href="#fig30_">Figs.&nbsp;30</a> and
+<a href="#fig31_">31</a> will, by considering
+the thin line drawn through the fixed pivots in each as a
+link, be seen to be formed by fixing different links of the
+same six-link linkage composed of two contra-parallelograms
+as just stated. The pointed links rotate with equal velocity
+in opposite directions, and thus, as shown in
+<a href="#fig28_">Fig.&nbsp;28</a>, at
+once give parallel motions. They can of course, however,
+be usefully employed for the mere purpose of reversing
+angular velocity </a><a href="#note11">(11)</a>.</p>
+
+<a name="fig31_"><hr>
+<a onclick="if (preloadFlag_XXXI == false) {
+preloadImage_XXXI(); changeImages_XXXI('fig31','fig/31anim.gif'); }
+else { changeImages_XXXI('fig31','fig/31.gif'); preloadFlag_XXXI = false; };">
+<center><img name="fig31" src="fig/31.gif"><br>
+<font size="-1"><br>Fig. 31</font></center></a>
+<hr></a>
+
+<p>
+<a name="note12_">An
+extension of the linkage employed in these two last
+figures gives us an apparatus of considerable interest. If
+I take another linkage contra-parallelogram of half the
+size of the smaller one and fit it to the smaller exactly as
+I fitted the smaller to the larger, I get the eight-linkage of
+<a href="#fig32_">Fig.&nbsp;32</a>. It has, you see, four pointed links radiating from
+a centre at equal angles; if I open out the two extreme
+ones to any desired angle, you will see that the two
+intermediate ones will exactly <i>trisect the angle</i>. Thus the power
+we have had to call into operation in order to effect Euclid’s
+first Postulate—linkages—enables us to solve a problem
+which has no “geometrical” solution. I could of course
+go on extending my linkage and get others which would
+divide an angle into any number of equal parts. It is obvious
+that these same linkages can also be employed as linkworks
+for doubling, trebling, etc., angular velocity
+</a><a href="#note12">(12)</a>.</p>
+
+<a name="fig32_"><hr>
+<a onclick="if (preloadFlag_XXXII == false) {
+preloadImage_XXXII(); changeImages_XXXII('fig32','fig/32anim.gif'); }
+else { changeImages_XXXII('fig32','fig/32.gif'); preloadFlag_XXXII = false; };">
+<center><img name="fig32" src="fig/32.gif"><br>
+<font size="-1"><br>Fig. 32</font></center></a>
+<hr></a>
+
+<p>
+Another form of “Isoklinostat”—for so the apparatus is
+termed by Professor Sylvester—was discovered by him. The
+construction is apparent from
+<a href="#fig33_">Fig.&nbsp;33</a>.  It has the great
+advantage of being composed of links having only two
+pivot distances bearing any proportion to each other, but
+it has a larger number of links than the other, and as the
+opening out of the links is limited, it cannot be employed
+for multiplying angular motion.</p>
+
+<a name="fig33_"><hr>
+<a onclick="if (preloadFlag_XXXIII == false) {
+preloadImage_XXXIII(); changeImages_XXXIII('fig33','fig/33anim.gif'); }
+else { changeImages_XXXIII('fig33','fig/33.gif'); preloadFlag_XXXIII = false; };">
+<center><img name="fig33" src="fig/33.gif"><br>
+<font size="-1"><br>Fig. 33</font></center></a>
+<hr></a>
+
+<p>
+<a name="note13_">Subsequently to the publication of the paper which
+contained an account of these linkworks of mine of which I
+have been speaking, I pointed out in a paper read before
+the Royal Society
+</a><a href="#note13">(13)</a>
+that the parallel motions given there
+were, as well as those of M.&nbsp;Peaucellier and Mr.&nbsp;Hart, all
+particular cases of linkworks of a very general character,
+all of which depended on the employment of a linkage
+composed of two similar figures. I have not sufficient time,
+and I think the subject would not be sufficiently inviting
+on account of its mathematical character, to dwell on it
+here, so I will leave those in whom an interest in the
+question has been excited to consider the original paper.</p>
+
+<p>
+<a name="note14_">At
+this point the problem of the production of straight-line
+motion now stands, and I think you will be of opinion
+that we hardly, for practical purposes, want to go much
+farther into the theoretical part of the question.  The
+results that have been obtained must now be left to the
+mechanician to deal with, if they are of any practical value.
+I have, as far as what I have undertaken to bring before
+you to-day is concerned, come to the end of my tether.
+I have shown you that we can describe a straight line, and
+<i>how</i> we can, and the consideration of the problem has led us
+to investigate some important pieces of apparatus. But I
+hope that this is not all. I hope that I have shown you (and
+your attention makes that hope a belief) that this now field
+of investigation is one possessing great interest and
+importance.  Mathematicians have no doubt done much more
+than I have been able to show you to-day
+</a><a href="#note14">(14)</a>, but the
+unexplored fields are still vast, and the earnest investigator
+can hardly fail to make new discoveries. I hope therefore
+that you whose duty it is to extend the domain of science
+will not let the subject drop with the close of my lecture.</p>
+
+<basefont size="4" face="New Century Schoolbook">
+
+<hr style="{margin-bottom: 0em;}">
+
+<p class="center"><font size="+1">NOTES.</font></p>
+
+<p class="note">
+<a name="note01">(1)</a>
+The hole through which the pencil passes can be made to describe
+a circle independently of any surface (see the latter part of Note&nbsp;3),
+but when we wish to describe a circle or a given plane surface that
+surface must of course be assumed to be plane.
+<a href="#note01_"><font face="Symbol">­</font></a></p>
+
+<p class="note" style="{margin-top: 1em;}">
+<a name="note02">(2)</a>
+“But” (it is carefully added) “not a graduated one.” By the
+use of a ruler with only two graduations, an angle can, as is well known,
+be readily trisected, thus—let <i>RST</i> be the angle, and let
+<i>PP</i><font face="Symbol">¢</font> be the
+points where the graduations cut the edge of the ruler. Let
+2<i>RS</i>&nbsp;=&nbsp;<i>PP</i><font face="Symbol">¢</font>.
+Draw <i>RU</i> parallel and <i>RV</i> perpendicular to <i>ST</i>. Then if we fit the
+ruler to the figure <i>RSTUV</i> so that the edge
+<i>PP</i><font face="Symbol">¢</font> passes through <i>S</i>,
+<i>P</i> lies on <i>RU</i> and <i>P</i><font face="Symbol">¢</font>
+on <i>RV</i>, <i>PP</i><font face="Symbol">¢</font> trisects
+the angle <i>RST</i>. For if <i>Q</i> be
+the middle point of <i>PP</i><font face="Symbol">¢</font>,
+and <i>RQ</i> be joined, the angle <i>TSP</i>&nbsp;=&nbsp;the angle
+<i>QPR</i>&nbsp;=&nbsp;the angle <i>QRP</i>&nbsp;= half
+the angle <i>RQS</i>, that is half the angle <i>RSQ</i>.</p>
+
+<p class="note">
+This solution is of course not a “geometrical” one in the sense I
+have indicated, because a graduated ruler and the fitting process are
+employed. But does Euclid confine himself to his three Postulates of
+construction? Does he not use a graduated ruler and this fitting
+process? Is not the side <i>AB</i> of the triangle <i>ABC</i>
+in Book&nbsp;I, Proposition&nbsp;4, graduated at <i>A</i>
+and <i>B</i>, and are we not told to take it up and fit it
+on to <i>DE</i>?</p>
+
+<p class="note">
+It seems difficult to see why Euclid employed the second
+Postulate—that which requires “that a terminated straight line may be
+produced to any length in a straight line,”—or rather, why he did
+not put it among the propositions in the First Book as a problem. It is
+by no means difficult by a rigid adherence to Euclid’s methods to find a
+point outside a terminated straight line which is in the same straight
+line with it, and to prove it to be so, without the employment of the
+second Postulate. That point can then, by the first Postulate, be
+joined to the extremity of the given straight line which is thus
+produced and the process can be continued indefinitely, since by the third
+Postulate circles can be drawn with any centre and radius.
+<a href="#note02_"><font face="Symbol">­</font></a></p>
+
+<p class="note" style="{margin-top: 1em;}">
+<a name="note03">(3)</a>
+It is important to notice that the fixed base to which the pivots
+are attached is really one link in the system. It would on that account
+be perhaps more scientific, in a general consideration of the subject, to
+commence by calling any combination of pieces (whether those pieces
+be cranks, beams, connecting-rods, or anything else) jointed or pivoted
+together, a “<i>linkage</i>.” When the motion of the links is confined to
+one plane or to a number of parallel planes, the system ia called
+a “<i>plane linkage</i>.” (It will be seen that this lecture is confined
+to plane linkages; a few remarks about solid linkages will be found
+at the end of the note.) The motion of the links among themselves in
+a linkage may be determinate or not. When the motion is
+determinate the number of links must be even, and the linkage is
+said to be “<i>complete</i>.” When the motion is not determinate the
+linkage is said to have 1, 2, 3, etc. degrees of freedom, according to the
+amount of liberty the links possess in their relative motion. These
+linkages may be termed “<i>primary</i>,” “<i>secondary</i>,” etc. linkages. Thus
+if we take the linkage composed of four links with two pivots on
+each, the motion of each link as regards the others is determinate, and
+the linkage is a “<i>complete linkage</i>.” If one link be jointed in the
+middle the linkage has one degree of liberty and is a “<i>primary linkage</i>.”
+So by making fresh joints “<i>secondary</i>” or “<i>tertiary</i>,” etc.
+linkages may be formed. These primary, etc. linkages may be formed in
+various other ways, but the example given will illustrate the reason
+for the nomenclature. When one link of a linkage is a fixed base the
+structure is called a “<i>linkwork</i>.” Linkworks, like linkages, may be
+“<i>primary</i>,” “<i>secondary</i>,” etc.  A “<i>complete linkwork</i>,” i.e. one in
+which the motion of every point on the moving part of the structure is
+definite, is called a “<i>link-motion</i>.” The various “grams” described by
+these link-motions are very difficult to deal with. I have shown, in a
+paper in the <i>Proceedings of the London Mathematical Society</i>, 1876,
+that a link-motion can be found to describe any given algebraic curve,
+but the converse problem, “Given the link-motion, what is the curve?”
+is one towards the solution of which but little way has been made; and
+the “tricircular trinodal sextics,” which are the “grams” of the simple
+three-piece motion, are still under the consideration of some of our
+most eminent mathematicians.</p>
+
+<p class="note">
+Taking them in their greatest generality, the theoretically simplest
+form of link-motion is not the flat circle-producing link, but a solid
+link pivoted to a fixed centre, and capable of motion in all directions
+about that centre, so that all points on it describe spheres in space;
+and the most general form a number of such links pivoted together,
+forming a structure the various points on which describe surfaces. If
+two simple solid links, turning about two fixed centres, are pivoted
+together at a common point, that point will describe a circle
+independently of any plane surface, the other points on the links describing
+portions of spheres.   The form of pivot which would have to be
+adopted in solid linkages would be the ball-and-socket joint, so that the
+links could not only move about round the fixed centre, but rotate
+about any imaginary axis through that centre. It is obvious that it
+would be impossible to construct any joint which would give the links
+perfect freedom of motion, as the fixed centre about which any link
+turned must be fastened to a fixed base in some way, and whatever
+means were adopted would interfere with the link in some portion of
+its path. This is not so in plane link-motions. The subject of solid
+linkages has been but little considered. Hooke’s joint may be
+mentioned as an example of a solid link-motion. (See also
+Note&nbsp;11.)
+<a href="#note03_"><font face="Symbol">­</font></a></p>
+
+<p class="note" style="{margin-top: 1em;}">
+<a name="note04">(4)</a>
+I have been more than once asked to try and get rid or the
+objectionable term “parallel motion.” I do not know how it came to
+be employed, and it certainly does not express what is intended. The
+apparatus does not give “parallel motion,” but approximate “rectilinear
+motion.” The expression, however, has now become crystallised,
+and I for one cannot undertake to find a solvent.
+<a href="#note04_"><font face="Symbol">­</font></a></p>
+
+<p class="note" style="{margin-top: 1em;}">
+<a name="note05">(5)</a> See the <i>Proceedings of the Royal Institution</i>,
+1874.
+<a href="#note05_"><font face="Symbol">­</font></a></p>
+
+<p class="note" style="{margin-top: 1em;}">
+<a name="note06">(6)</a>
+This paper is printed <i>in extenso</i> in the Cambridge <i>Messenger of
+Mathematics</i>, 1875, vol.&nbsp;iv., pp.&nbsp;82—116, and contains much valuable
+matter about the mathematical part of the subject.
+<a href="#note06_"><font face="Symbol">­</font></a></p>
+
+<p class="note" style="{margin-top: 1em;}">
+<a name="note07">(7)</a>
+The interchange of a radial and traversing bar converts Watt’s
+Parallel Motion into the Grasshopper Parallel Motion.  The same
+change shows us that the curves traced by the linkwork formed by
+fixing one bar of a “kite” are the same as those traced by the
+linkwork formed by fixing one bar of a contra-parallelogram.  This is
+interesting as showing that there is really only one case in which the
+sextic curve, the “gram” of three-bar motion, breaks up into a circle
+and a quartic. <a href="#note07_"><font face="Symbol">­</font></a></p>
+
+<p class="note" style="{margin-top: 1em;}">
+<a name="note08">(8)</a>
+For a full account of this and the piece of apparatus next
+described, see <i>Nature</i>, vol.&nbsp;xii, pp.&nbsp;168 and 214.
+<a href="#note08_"><font face="Symbol">­</font></a></p>
+
+<p class="note" style="{margin-top: 1em;}">
+<a name="note09">(9)</a>
+See the <i>Messenger of Mathematics</i>, “On Some New Linkages,”
+1875, vol.&nbsp;iv., p.&nbsp;121.
+<a href="#note09_"><font face="Symbol">­</font></a></p>
+
+<p class="note" style="{margin-top: 1em;}">
+<a name="note10">(10)</a> A reference to the paper referred to in the last note will show
+that it is not necessary that the small kites and contra-parallelograms
+should be half the size of the large ones, or that the long links should
+be double the short; the particular lengths are chosen for ease of
+description in lecturing.
+<a href="#note10_"><font face="Symbol">­</font></a></p>
+
+<p class="note" style="{margin-top: 1em;}">
+<a name="note11">(11)</a>
+By an arrangement of Hooke’s joints, pure solid linkages, we
+can make two axes rotate with equal velocities in contrary directions
+(see Willis’s <i>Principles of Mechanism</i>, 2nd&nbsp;ed., sec.&nbsp;516, p.&nbsp;456), and
+therefore produce an exact parallel motion.
+<a href="#note11_"><font face="Symbol">­</font></a></p>
+
+<p class="note" style="{margin-top: 1em;}">
+<a name="note12">(12)</a>
+The “kite” and the “contra-parallelogram” are subject to the
+inconvenience (mathematically very important) of having “dead
+points.” These can be, however, readily got rid of by employing
+pins and gabs in the manner pointed out by Professor Reuleaux.  (See
+Reuleaux’s <i>Kinematics of Machinery</i>, translated by Professor Kennedy,
+Macmillan, pp.&nbsp;290&#151;294.)
+<a href="#note12_"><font face="Symbol">­</font></a></p>
+
+<p class="note" style="{margin-top: 1em;}">
+<a name="note13">(13)</a>
+<i>Proceedings of the Royal Society</i>, No.&nbsp;163, 1875, “On a General
+Method of Obtaining Exact Rectilinear Motion by Linkwork.” I take
+this opportunity of pointing out that the results then arrived at may
+be greatly extended from the following simple consideration.</p>
+
+<p class="note">
+If the straight link <i>OB</i> makes any angle <i>D</i> with the straight link
+<i>OA</i>, and if instead of employing the straight links we employ the pieces
+<i>A</i><font face="Symbol">¢</font><i>OA</i>,
+<i>B</i><font face="Symbol">¢</font><i>OB</i>, and if the angle
+<i>A</i><font face="Symbol">¢</font><i>OA</i> equals the angle
+<i>B</i><font face="Symbol">¢</font><i>OB</i>, then the angle
+<i>B</i><font face="Symbol">¢</font><i>OA</i><font face="Symbol">¢</font>
+equals <i>D</i>. The recognition of this very obvious fact will
+enable us to derive the Sylvester&#151;Kempe parallel motion from that of
+Mr.&nbsp;Hart.
+<a href="#note13_"><font face="Symbol">­</font></a></p>
+
+<p class="note" style="{margin-top: 1em;}">
+<a name="note14">(14)</a>
+In addition to the authorities already mentioned, the following
+may be referred to by those who desire to know more about the mathematical
+part of the subject of “Linkages.” “<i>Sur les Syst&#232;mes de Tiges
+Articul&#233;es</i>,” par M.&nbsp;V.&nbsp;Liguine, in the <i>Nouvelles Annales</i>, December,
+1876, pp. 520&#151;560.</p>
+
+<p class="note">
+Two papers “<i>On Three-bar Motion</i>,” by Professor Cayley and
+Mr.&nbsp;S.&nbsp;Roberts, in the <i>Proceedings of the London Mathematical Society</i>,
+1876, vol.&nbsp;vii, pp.&nbsp;14 and 136. Other short papers in
+the <i>Proceedings of the London Mathematical Society</i>, vols.&nbsp;v, vi, vii, and the
+<i>Messenger of Mathematics</i>, vols.&nbsp;iv and v.
+<a href="#note14_"><font face="Symbol">­</font></a></p>
+
+<hr style="{margin-top: 1em; margin-bottom: 0em;}">
+
+</body>
+
+</html>
