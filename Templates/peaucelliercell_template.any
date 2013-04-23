@@ -1,0 +1,195 @@
+#class_template Peaucelliercell_template (PARALLEL_LENGTH, EXTENDER_LENGTH,SOFT_DRIVERS){
+  
+//    #var AnyVec3 Crank1_r0 = {0.0,0};
+  //  #var AnyMat33 Crank1_Axes0 = RotMat(pi/2,z);
+  //  #var AnyVec3 Crank2_r0 = Coupler_r0 +{L_COUPLER, 0,0}*Coupler_Axes0'-{L_CRANK2,0,0}*Crank2_Axes0';
+  //  #var AnyMat33 Crank2_Axes0 = RotMat(pi/2,z);
+  //  #var AnyVec3 Coupler_r0 = Crank1_r0+{L_CRANK1,0,0}*Crank1_Axes0';
+  //  #var AnyMat33 Coupler_Axes0 = RotMat(0.0,z);
+  #var AnyVar AD_len = PARALLEL_LENGTH;
+  #var AnyVar CD_len = PARALLEL_LENGTH;
+  #var AnyVar CB_len = PARALLEL_LENGTH;
+  #var AnyVar AB_len = PARALLEL_LENGTH;
+  #var AnyVar AO_len = EXTENDER_LENGTH;
+  #var AnyVar CO_len = EXTENDER_LENGTH;
+  #var AnyVar width = PARALLEL_LENGTH*sqrt(2);
+
+  AnySeg AD ={
+    r0 = {0,.width/2,0};
+    Axes0 = RotMat(r0,{sqrt(.AD_len^2-r0[1]^2),0,0},{0,0,0.0})*RotMat(pi,x);
+    Mass = 0;
+    Jii = {0, 0, 0};
+    AnyRefNode D_Node = {
+      sRel = {..AD_len ,0,0};
+      AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};};
+    };
+    AnyDrawLine drwl = {
+      p0 = {0,0,0};p1 = .D_Node.sRel;
+      Line.Thickness = 0.02;GlobalCoord = Off;
+      Line.RGB = {1,0.5,0.5};
+    };
+  };
+  AnySeg CD ={
+    r0 = {0,-.width/2,0};
+    Axes0 = RotMat(r0,{sqrt(.CD_len^2-r0[1]^2),0,0},{0,0,0.0});
+    Mass = 0;
+    Jii = {0, 0, 0};
+    AnyRefNode D_Node = {
+      sRel = {..CD_len ,0,0};
+      AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};};
+    };
+    AnyDrawLine drwl = {
+      p0 = {0,0,0};p1 = .D_Node.sRel;
+      Line.Thickness = 0.02;GlobalCoord = Off;
+      Line.RGB = {1,0.5,0.5};
+    };
+  };
+  AnySeg CB ={
+    r0 = {0,-.width/2,0};
+    Axes0 = RotMat(r0,{-sqrt(.CB_len^2-r0[1]^2),0,0},{0,0,0.0})*RotMat(pi,x);
+    Mass = 0;
+    Jii = {0, 0, 0};
+    AnyRefNode B_Node = {
+      sRel = {..CB_len ,0,0};
+      AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};};
+    };
+    AnyDrawLine drwl = {
+      p0 = {0,0,0};p1 = .B_Node.sRel;
+      Line.Thickness = 0.02;GlobalCoord = Off;
+      Line.RGB = {1,0.5,0.5};
+    };
+  };
+  
+  AnySeg AB ={
+    r0 = {0,.width/2,0};
+    Axes0 = RotMat(r0,{-sqrt(.AB_len^2-r0[1]^2),0,0},{0,0,0.0});
+    Mass = 0;
+    Jii = {0, 0, 0};
+    AnyRefNode B_Node = {
+      sRel = {..AB_len ,0,0};
+      AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};};
+    };
+    AnyDrawLine drwl = {
+      p0 = {0,0,0};p1 = .B_Node.sRel;
+      Line.Thickness = 0.02;GlobalCoord = Off;
+      Line.RGB = {1,0.5,0.5};
+    };
+  };
+  
+  AnySeg AO ={
+    
+    r0 = {0,.width/2,0};
+    Axes0 = RotMat(r0,{-sqrt(.AO_len^2-r0[1]^2),0,0},{0,0,0.0});
+    Mass = 0;
+    Jii = {0, 0, 0};
+    AnyRefNode O_Node = {
+      sRel = {..AO_len ,0,0};
+      AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};};
+    };
+    AnyDrawLine drwl = {
+      p0 = {0,0,0};p1 = .O_Node.sRel;
+      Line.Thickness = 0.02;GlobalCoord = Off;
+      Line.RGB = {0.5,0.5,1};
+    };
+  };
+  AnySeg CO ={
+    r0 = {0,-.width/2,0};
+    Axes0 = RotMat(r0,{-sqrt(.AO_len^2-r0[1]^2),0,0},{0,0,0.0})*RotMat(pi,x);
+    Mass = 0;
+    Jii = {0, 0, 0};
+    AnyRefNode O_Node = {
+      sRel = {..CO_len ,0,0};
+      AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};};
+    };
+    AnyDrawLine drwl = {
+      p0 = {0,0,0};p1 = .O_Node.sRel;
+      Line.Thickness = 0.02;GlobalCoord = Off;
+      Line.RGB = {0.5,0.5,1};
+    };
+  };  
+  
+  
+  AnyRevoluteJoint AO_AD_pivot = 
+  {
+    //Axis = z;
+    //Ref = 0;
+    AnyRefFrame &Ref0 = .AO;
+    AnyRefFrame &Ref1 = .AD;
+    AnyDrawStdJoint drw = { };
+  };
+  AnyRevoluteJoint AB_AD_pivot = 
+  {
+    //Axis = z;
+    //Ref = 0;
+    AnyRefFrame &Ref0 = .AB;
+    AnyRefFrame &Ref1 = .AD;
+    AnyDrawStdJoint drw = { };
+  }; 
+  AnyRevoluteJoint CO_CD_pivot = 
+  {
+    //Axis = z;
+    //Ref = 0;
+    AnyRefFrame &Ref0 = .CO;
+    AnyRefFrame &Ref1 = .CD;
+    AnyDrawStdJoint drw = { };
+  };
+  AnyRevoluteJoint CB_CD_pivot = 
+  {
+    //Axis = z;
+    //Ref = 0;
+    AnyRefFrame &Ref0 = .CB;
+    AnyRefFrame &Ref1 = .CD;
+    AnyDrawStdJoint drw = { };
+  }; 
+  
+  AnyRevoluteJoint AO_CO_pivot = {
+      AnyRefFrame &Ref0 = .AO.O_Node ;
+      AnyRefFrame &Ref1 = .CO.O_Node;
+  };
+  
+  AnyKinEq AD_CD_pivot = {
+    MeasureOrganizer = {0,1};
+    AnyKinLinear Lin = {
+      AnyRefFrame &Ref0 = ..AD.D_Node ;
+      AnyRefFrame &Ref1 = ..CD.D_Node;
+          Ref = 0;
+    };
+  };
+
+  AnyKinEq AB_CB_pivot = {
+    MeasureOrganizer = {0,1};
+    AnyKinLinear Lin = {
+      AnyRefFrame &Ref0 = ..AB.B_Node ;
+      AnyRefFrame &Ref1 = ..CB.B_Node;
+          Ref = 0;
+    };
+  };
+  
+ #if SOFT_DRIVERS == "On"
+   AnyKinEq Fix = {
+     AnyKinLinear lin= {
+      AnyRefFrame &Ref0 = ..CD;
+     };
+     AnyKinRotational rot = 
+     {
+       Type = RotAxesAngles;
+       AnyRefFrame &ref = ..CD;
+     };
+      CType = {Soft,Soft,Soft,Soft,Soft,Soft};
+   };
+   AnyKinEqSimpleDriver Fix2 = 
+   {
+     DriverPos = {sqrt(2)*PARALLEL_LENGTH};
+     DriverVel = {0.0};
+     CType ={Soft};
+     AnyKinPLine dist = 
+     {
+       AnyRefFrame &A_ref = ..AO;
+       AnyRefFrame &C_ref = ..CO;
+     };
+   };
+   
+   
+ #endif
+  
+};

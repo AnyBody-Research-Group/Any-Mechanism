@@ -1,0 +1,82 @@
+/*
+From Wikipedia: 
+*/
+
+#include "../Templates/peaucelliercell_template.any"
+#include "../Templates/crank_template.any"
+#include "../Templates/tracer_template.any"
+Main = {
+  
+  AnyOperationSequence RunApplication = {
+    AnyOperation &ref =.Study.Kinematics;
+  };
+
+    AnyFixedRefFrame GlobalRef = {
+      // Crate two frames for grounding the model
+      AnyRefNode g1  ={sRel = {0,0,0};};
+      AnyRefNode g2  ={sRel = {1.0,0,0};};
+    };  // Global reference frame
+    
+    AnyFolder  Model = {
+      
+    // Create Peaucellier cell and ground it.   
+    Peaucelliercell_template PCell(
+    PARALLEL_LENGTH = 2.0,
+    EXTENDER_LENGTH= 1.5,
+    SOFT_DRIVERS = "Off"
+    ) = {
+      AnyRevoluteJoint ground1 = {
+        AnyRefFrame &Ref0 = ...GlobalRef.g1;
+        AnyRefFrame &Ref1 = .AO.O_Node;
+      };
+    };
+    
+    // Create the driving crank link, and connect to 
+    // peaucellier's cell
+    crank_template rotator(
+    GND = ..GlobalRef.g2,
+    CRANKLENGTH = 1.0) = {
+      crank_r0 = ..GlobalRef.g2.sRel;
+      crank_axes0 = RotMat(0.0,z);
+      AnyKinEq Connection = {
+        MeasureOrganizer = {0,1};
+        AnyKinLinear Lin = {
+          AnyRefFrame &Ref0 = ..Crank_link.endpoint ;
+          AnyRefFrame &Ref1 = ...PCell.AD.D_Node;
+          Ref = 0;
+        };
+      };
+    };
+    
+    // Add a driver to the crank.
+    AnyKinEqFourierDriver drw =  {
+        Type = Sin;
+        Freq = 1;
+        A = {{0,8*pi/10}};
+        B = {{0,0}};
+      MeasureOrganizer = {0};
+      AnyKinRotational RotKin = {
+        Type = RotAxesAngles;
+        AnyRefFrame &KinRot = ..rotator.Crank_link;
+      };
+    };
+  };
+    
+
+  AnyBodyStudy Study = {
+    InitialConditions.SolverType = KinSolOverDeterminate;
+        Kinematics.SolverType = KinSolOverDeterminate;
+
+    nStep = 200;
+    tStart = 0;
+    tEnd = 1;
+    AnyFolder &Model = .Model;
+    tracer_template chart1(
+    ABS1 = "Main.Study.Output.Model.PCell.AB.B_Node.r[0]",
+    ABS2 = "Main.Study.Output.Model.PCell.AB.B_Node.r[1]",
+    VAL = "Main.Study.Output.Model.PCell.AB.B_Node.r[2]"
+     ) = {};
+    Gravity = {0.0, -9.81, 0.0};
+  };
+
+};  // Main

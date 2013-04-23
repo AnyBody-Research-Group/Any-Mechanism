@@ -1,0 +1,27 @@
+#class_template crank_template (AnyRefFrame &GND, CRANKLENGTH){
+ #var AnyVec3 crank_r0 = GND.sRel;
+ #var AnyMat33 crank_axes0 = RotMat(0.0,z);
+  
+  AnySeg Crank_link = {
+    r0 = .crank_r0;
+    Axes0 = .crank_axes0;
+    Mass = 0;
+    Jii = {0, 0, 0};
+    AnyRefNode endpoint = {
+      sRel = {CRANKLENGTH, 0, 0};
+      
+    };
+    AnyDrawLine drwl = {
+      p0 = {0,0,0};p1 = .endpoint.sRel;
+      Line.Thickness = 0.02;GlobalCoord = Off;
+      Line.RGB = {1,1,0.5};
+    };
+    
+  };
+  AnyRevoluteJoint crank_pivot = {
+    AnyRefFrame &ref0 = .Crank_link ;
+    AnyRefFrame &ref1 = .GND;
+  };   
+  
+  
+};

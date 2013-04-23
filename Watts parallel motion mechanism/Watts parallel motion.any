@@ -36,18 +36,46 @@ Main = {
           AnyRefNode Pantograph1Node = {sRel =.CouplerNode.sRel;};
         };
         Coupler = {
-          AnyRefNode Piston1 = {sRel = 0.5*.Crank2Node.sRel; AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};}; };
-          AnyRefNode Pantograph2Node = {sRel = ParallelExtensionFactor *.Piston1.sRel; AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};}; };
+          AnyRefNode Piston1Node = {sRel = 0.5*.Crank2Node.sRel; };
+          AnyRefNode Pantograph2Node = {sRel = ParallelExtensionFactor *.Piston1Node.sRel; AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};}; };
           AnyDrawLine drwl2 = {
             p0 = .Crank2Node.sRel; p1 = .Pantograph2Node.sRel;
             Line.Thickness = 0.02;GlobalCoord = Off; Line.RGB = {0.5,0.5,1};
           };
-          
         };
-        
+        AnySeg Piston1 =  {
+          Mass = 0;
+          Jii = {0, 0, 0};
+          
+          AnyRefNode EndPoint = {
+            sRel = {0,-1,0};
+            AnyRefNode trace = {sRel={0.02,0,0};};
+            AnyDrawNode drw = {};
+          };
+          AnyDrawLine drwl = {
+            p0 = {0,0,0}; p1 = .EndPoint.sRel;
+            Line.Thickness = 0.02;GlobalCoord = Off; Line.RGB = {0,0,0};
+          };
+        };
+        AnyRevoluteJoint Piston1Jnt = {
+          AnyRefFrame &ref0 = .Piston1;
+          AnyRefFrame &ref1 = .Coupler.Piston1Node;
+          AnyDrawStdJoint drw = {};
+        };
+        AnyKinEq PistonGuide = {
+          MeasureOrganizer = {0};
+          AnyKinRotational KinRot = 
+          {
+            Type = RotAxesAngles;
+            AnyRefFrame &ref = ..Piston1;
+          };
+        };
         
   
       };
+      
+      
+      
       Fourbar_template PantographExtender(
       GND1 = .WattsLinkages.Crank1.Pantograph1Node ,
       GND2 = .WattsLinkages.Coupler.Pantograph2Node ,
@@ -69,6 +97,36 @@ Main = {
             AnyRefFrame &ref1 = ...WattsLinkages.Crank1;
           };
         };
+        
+        AnySeg Piston2 =  {
+          Mass = 0;
+          Jii = {0, 0, 0};
+          
+          AnyRefNode EndPoint = {
+            sRel = {0,-0.5,0};
+            AnyRefNode trace = {sRel={0.02,0,0};};
+            AnyDrawNode drw = {};
+          };
+          AnyDrawLine drwl = {
+            p0 = {0,0,0}; p1 = .EndPoint.sRel;
+            Line.Thickness = 0.02;GlobalCoord = Off; Line.RGB = {0,0,0};
+          };
+        };
+        AnyRevoluteJoint Piston3Jnt = {
+          AnyRefFrame &ref0 = .Piston2;
+          AnyRefFrame &ref1 = .Coupler.Crank2Node;
+          AnyDrawStdJoint drw = {};
+        };
+        AnyKinEq PistonGuide = {
+          MeasureOrganizer = {0};
+          AnyKinRotational KinRot = 
+          {
+            Type = RotAxesAngles;
+            AnyRefFrame &ref = ..Piston2;
+          };
+        };
+        
+        
       };       
       
       
@@ -123,14 +181,14 @@ Main = {
     tEnd = 2;
     AnyFolder &Model = .Mechanism;
     tracer_template Piston1Trace(
-    ABS1 = "Main.MyStudy.Output.Model.WattsLinkages.Coupler.Piston1.r[0]",
-    ABS2 = "Main.MyStudy.Output.Model.WattsLinkages.Coupler.Piston1.r[1]",
-    VAL = "Main.MyStudy.Output.Model.WattsLinkages.Coupler.Piston1.r[2 ]"
+    ABS1 = "Main.MyStudy.Output.Model.WattsLinkages.Piston1.EndPoint.trace.r[0]",
+    ABS2 = "Main.MyStudy.Output.Model.WattsLinkages.Piston1.EndPoint.trace.r[1]",
+    VAL = "Main.MyStudy.Output.Model.WattsLinkages.Piston1.EndPoint.trace.r[2 ]"
      ) = {};
     tracer_template Piston2Trace(
-    ABS1 = "Main.MyStudy.Output.Model.PantographExtender.Coupler.Crank2Node.r[0]",
-    ABS2 = "Main.MyStudy.Output.Model.PantographExtender.Coupler.Crank2Node.r[1]",
-    VAL = "Main.MyStudy.Output.Model.PantographExtender.Coupler.Crank2Node.r[2 ]"
+    ABS1 = "Main.MyStudy.Output.Model.PantographExtender.Piston2.EndPoint.trace.r[0]",
+    ABS2 = "Main.MyStudy.Output.Model.PantographExtender.Piston2.EndPoint.trace.r[1]",
+    VAL = "Main.MyStudy.Output.Model.PantographExtender.Piston2.EndPoint.trace.r[2 ]"
      ) = {};
      
     Gravity = {0.0, -9.81, 0.0};

@@ -1,0 +1,29 @@
+/*
+From Wikipedia: 
+*/
+
+#include "../Templates/peaucelliercell_template.any"
+Main = {
+  
+   
+    Peaucelliercell_template PCell(
+    PARALLEL_LENGTH = 1.0,
+    EXTENDER_LENGTH= 2,
+    SOFT_DRIVERS = "On"
+    ) = {  };
+    
+  
+    
+
+  AnyBodyStudy Study = {
+    InitialConditions.SolverType = KinSolOverDeterminate;
+    Kinematics.SolverType = KinSolOverDeterminate;
+
+    nStep = 1;
+    tStart = 0;
+    tEnd = 1;
+    AnyFolder &Model = .PCell;
+    Gravity = {0.0, -9.81, 0.0};
+  };
+
+};  // Main

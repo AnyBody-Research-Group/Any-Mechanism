@@ -27,7 +27,7 @@
   #define L1 1.8
   
 
- 
+#include "../Templates/tracer_template.any"
   
 Main = {
 
@@ -45,7 +45,6 @@ Main = {
     
 
     
-    #include "chart.any"
     #ifdef RevoluteSlider1
     AnyRefNode Slider1Revolute = {
        sRel = {-R1, 0,0};
@@ -173,6 +172,13 @@ Main = {
   // The study: Operations to be performed on the model
   AnyBodyStudy MyStudy = {
     AnyFolder &Model = .MyModel;
+    
+    tracer_template Piston1Trace(
+    ABS1 = "Main.MyStudy.Output.Model.Coupler.Point.r[0]",
+    ABS2 = "Main.MyStudy.Output.Model.Coupler.Point.r[1]",
+    VAL = "Main.MyStudy.Output.Model.Coupler.Point.r[2]"
+     ) = {};
+    
 //    Kinematics.SolverType = KinSolOverDeterminate;
     Gravity = {0.0, -9.81, 0.0};
     nStep = 60;
