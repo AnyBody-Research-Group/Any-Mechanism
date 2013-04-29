@@ -1,0 +1,193 @@
+/*
+From Wikipedia: 
+*/
+
+#include "../Templates/fourbar_template.any"
+#include "../Templates/tracer_template.any"
+
+#define DRAWLINE(P1,R,G,B) AnyDrawLine drwline = {  p0 = {0,0,0}; p1 = P1; Line.Thickness = 0.02;GlobalCoord = Off;  Line.RGB = {R,G,B};    };
+
+#define DRAWNODE AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};}; 
+Main = {
+  
+  AnyOperationSequence RunApplication = {
+    AnyOperation &ref =.Study.Kinematics;
+  };
+
+    
+    // A Triangle is attached on top of Fourbar mechanism
+    
+    AnyFolder Model = {
+      AnyVar xPos = 0.0;
+      
+      
+
+    AnyFixedRefFrame GlobalRef = {
+      AnyRefNode g1  ={sRel = {..xPos ,0,0};};
+      AnyRefNode g2  ={sRel = {0.4+..xPos,0,0};};
+    };  // Global reference frame
+
+      
+    Fourbar_template AFrame(
+    GND1 = .GlobalRef.g1,
+    GND2 = .GlobalRef.g2,
+    L_CRANK1 = 0.3,
+    L_CRANK2 = 0.3,
+    L_COUPLER = 0.2
+    ) = {
+      AnyVar Crank1A_Length = 0.4;
+      AnyVar Crank2B_Length = 0.4;
+      AnyVar AO_Length = 0.2;
+      AnyVar BO_Length = 0.2;
+      
+      Crank1 = {
+        AnyRefNode A_Node = {sRel = {..Crank1A_Length ,0,0}; DRAWNODE };
+        AnyDrawLine drwl1 = {
+          p0 = .drwl.p1; p1 = .A_Node .sRel; Line.Thickness = 0.02;GlobalCoord = Off;
+          Line.RGB = {1,0.5,0.5};
+        };
+      };
+      Crank2 = {
+        AnyRefNode B_Node = {sRel = {..Crank2B_Length ,0,0}; DRAWNODE };
+        AnyDrawLine drwl1 = {
+          p0 = .drwl.p1; p1 = .B_Node.sRel; Line.Thickness = 0.02;GlobalCoord = Off;
+          Line.RGB = {0.5,1,0.5};
+        };
+      };
+      AnySeg AO = {
+
+        r0 = .Crank1.r0+.Crank1.A_Node.sRel*.Crank1.Axes0';
+        Axes0 = RotMat(pi/3,z);
+        Mass = 0;
+        Jii = {0, 0, 0};
+        AnyRefNode O_Node = {sRel = {..AO_Length,0,0};DRAWNODE };
+        DRAWLINE(.O_Node.sRel,0.5,0.5,0.5) 
+      };
+      AnySeg BO = {
+        r0 = .Crank2.r0+.Crank2.B_Node.sRel*.Crank2.Axes0';
+        Axes0 = RotMat(-4*pi/3,z);
+        Mass = 0;
+        Jii = {0, 0, 0};
+        AnyRefNode O_Node = {sRel = {..BO_Length,0,0};DRAWNODE };
+        DRAWLINE(.O_Node.sRel,0.5,0.5,0.5) 
+      };
+      AnyRevoluteJoint A_pivot = {
+        AnyRefFrame &ref1 = .Crank1.A_Node;
+        AnyRefFrame &ref2 = .AO;
+      };
+      AnyRevoluteJoint B_pivot = {
+        AnyRefFrame &ref1 = .Crank2.B_Node;
+        AnyRefFrame &ref2 = .BO;
+      };
+      AnyKinEq O_pivot = {
+        CType = {Soft,Hard};
+        MeasureOrganizer = {0,1};
+        AnyKinLinear lin = {
+          AnyRefFrame &ref1 = ..AO.O_Node;
+          AnyRefFrame &ref2 = ..BO.O_Node;
+        };
+      };
+     
+     };
+
+//      AnyKinEqSimpleDriver Driver = 
+//      {
+//        MeasureOrganizer = {0};
+//        DriverVel = {-0.35};
+//        DriverPos = {0.4};
+//        AnyKinLinear lin = 
+//        {
+//          AnyRefFrame &ref1  = ..AFrame.Crank2.B_Node;
+//        };
+//      };  
+    AnyKinEqFourierDriver drw =  {
+        Type = Cos;
+        Freq = 1;
+        A = {{2.9*pi/4,0.65}};
+        B = {{0,0}};
+      MeasureOrganizer = {0};
+      AnyKinRotational RotKin = {
+        Type = RotAxesAngles;
+          AnyRefFrame &ref1  = ..AFrame.Crank2;
+      };
+    };
+
+    
+    
+      AnyKinEqSimpleDriver softlindriver = 
+      {
+        MeasureOrganizer = {0};
+        DriverVel = {0.0};
+        DriverPos = {0.2};
+
+        CType = {Soft};
+        AnyFolder Weight = {
+          AnyFunConst W = 
+          {
+            Value = {0.05};
+          };        
+        };
+        WeightFun = {&Weight.W};
+        AnyKinLinear lin = 
+        {
+          AnyRefFrame &ref = ..AFrame.AO.O_Node ;
+        };
+      };
+
+      
+  
+};
+
+AnyOptKinStudy optimize  = 
+{
+   AnyFolder &StudyRef = .Study;
+   ParameterOptimization.ConvergenceTol=1e-2;
+   Analysis =   {
+     AnyOperation &ref = .StudyRef.Kinematics;
+   };
+   
+   AnyDesVar BaseWidth =    {
+     Val = .StudyRef.Model.xPos ; 
+   };
+   AnyDesVar L_crank1 =    {
+     Val = .StudyRef.Model.AFrame.Crank1Length ;
+   };
+   AnyDesVar L_crank2 =    {
+     Val = .StudyRef.Model.AFrame.Crank2Length;
+   };
+   AnyDesVar L_coupler =    {
+     Val = .StudyRef.Model.AFrame.CouplerLength ;
+   };
+   AnyDesVar L_crank1A =    {
+     Val = .StudyRef.Model.AFrame.Crank1A_Length ;
+   };
+   AnyDesVar L_crank2B =    {
+     Val = .StudyRef.Model.AFrame.Crank2B_Length ;
+   };
+   AnyDesVar L_AO =    {
+     Val = .StudyRef.Model.AFrame.AO_Length;
+   };
+   AnyDesVar L_BO =    {
+     Val = .StudyRef.Model.AFrame.BO_Length;
+   };
+};
+
+
+
+  AnyBodyStudy Study = {
+    Kinematics.SolverType = KinSolOverDeterminate;
+    InitialConditions.SolverType = KinSolOverDeterminate;
+    nStep = 200;
+    tStart = 0;
+    tEnd = 3;
+    AnyFolder &Model = .Model;
+    tracer_template chart1(
+    ABS1 = "Main.Study.Output.Model.AFrame.BO.O_Node.r[0]",
+    ABS2 = "Main.Study.Output.Model.AFrame.BO.O_Node.r[1]",
+    VAL = "Main.Study.Output.Model.AFrame.BO.O_Node.r[2 ]"
+     ) = {};
+    Gravity = {0.0, -9.81, 0.0};
+  };
+  
+
+};  // Main
