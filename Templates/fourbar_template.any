@@ -7,14 +7,18 @@
   #var AnyVec3 Coupler_r0 = Crank1_r0+{L_CRANK1,0,0}*Crank1_Axes0';
   #var AnyMat33 Coupler_Axes0 = RotMat(0.0,z);
 
-    
+  AnyVar Crank1Length =   L_CRANK1;
+  AnyVar Crank2Length =   L_CRANK2;
+  AnyVar CouplerLength =   L_COUPLER;
+  
+  
 AnySeg Crank1 ={
     r0 = .Crank1_r0 ;
     Axes0 = .Crank1_Axes0 ;
     Mass = 0;
     Jii = {0, 0, 0};
     AnyRefNode CouplerNode = {
-      sRel = {L_CRANK1,0,0};
+      sRel = {..Crank1Length ,0,0};
       AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};};
     };
     AnyDrawLine drwl = {
@@ -29,7 +33,7 @@ AnySeg Crank2 ={
     Mass = 0;
     Jii = {0, 0, 0};
     AnyRefNode CouplerNode = {
-      sRel = {L_CRANK2,0,0};
+      sRel = {..Crank2Length ,0,0};
       AnyDrawNode drw = {ScaleXYZ = 0.02*{1,1,1};};
     };
     AnyDrawLine drwl = {
@@ -47,7 +51,7 @@ AnySeg Coupler ={
       sRel = {0,0,0};
     };
     AnyRefNode Crank2Node = {
-      sRel = {L_COUPLER,0,0};
+      sRel = {..CouplerLength ,0,0};
     };
     AnyDrawLine drwl = {
       p0 = .Crank1Node.sRel; p1 = .Crank2Node.sRel;
