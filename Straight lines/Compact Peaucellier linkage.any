@@ -14,15 +14,15 @@ Main = {
     AnyFixedRefFrame GlobalRef = {
       // Crate two frames for grounding the model
       AnyRefNode g1  ={sRel = {0,0,0};};
-      AnyRefNode g2  ={sRel = {1.0,0,0};};
+      AnyRefNode g2  ={sRel = {0.5,0,0};};
     };  // Global reference frame
     
     AnyFolder  Model = {
       
     // Create Peaucellier cell and ground it.   
     Peaucelliercell_template PCell(
-    PARALLEL_LENGTH = 2.0,
-    EXTENDER_LENGTH= 1.5,
+    PARALLEL_LENGTH = 1.0,
+    EXTENDER_LENGTH= 0.75,
     SOFT_DRIVERS = "Off"
     ) = {
       AnyRevoluteJoint ground1 = {
@@ -35,7 +35,7 @@ Main = {
     // peaucellier's cell
     crank_template rotator(
     GND = ..GlobalRef.g2,
-    CRANKLENGTH = 1.0) = {
+    CRANKLENGTH = 0.5) = {
       crank_r0 = ..GlobalRef.g2.sRel;
       crank_axes0 = RotMat(0.0,z);
       AnyKinEq Connection = {
@@ -49,10 +49,10 @@ Main = {
     };
     
     // Add a driver to the crank.
-    AnyKinEqFourierDriver drw =  {
+    AnyKinEqFourierDriver driver =  {
         Type = Sin;
         Freq = 1;
-        A = {{0,8*pi/10}};
+        A = {{0,8.39*pi/10}};
         B = {{0,0}};
       MeasureOrganizer = {0};
       AnyKinRotational RotKin = {
@@ -64,12 +64,12 @@ Main = {
     
 
   AnyBodyStudy Study = {
-    InitialConditions.SolverType = KinSolOverDeterminate;
-        Kinematics.SolverType = KinSolOverDeterminate;
+//    InitialConditions.SolverType = KinSolOverDeterminate;
+//        Kinematics.SolverType = KinSolOverDeterminate;
 
-    nStep = 200;
+    nStep = 600;
     tStart = 0;
-    tEnd = 1;
+    tEnd = 4;
     AnyFolder &Model = .Model;
     tracer_template chart1(
     ABS1 = "Main.Study.Output.Model.PCell.AB.B_Node.r[0]",
