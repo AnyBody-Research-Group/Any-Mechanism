@@ -35,6 +35,7 @@ Main = {
     L_CRANK2 = 0.3,
     L_COUPLER = 0.2
     ) = {
+      Crank1_Axes0 = RotMat(pi/2.2,z);
       AnyVar Crank1A_Length = 0.4;
       AnyVar Crank2B_Length = 0.4;
       AnyVar AO_Length = 0.2;
@@ -100,39 +101,47 @@ Main = {
 //          AnyRefFrame &ref1  = ..AFrame.Crank2.B_Node;
 //        };
 //      };  
-    AnyKinEqFourierDriver drw =  {
-        Type = Cos;
+//    AnyKinEqFourierDriver driver =  {
+//        Type = Cos;
+//        Freq = 1;
+//        A = {{2.9*pi/4,0.70}};
+//        B = {{0,0}};
+//      MeasureOrganizer = {0};
+//      AnyKinRotational RotKin = {
+//        Type = RotAxesAngles;
+//          AnyRefFrame &ref1  = ..AFrame.Crank2;
+//      };
+//    };
+    AnyKinEqFourierDriver driver =  {
+        Type = Sin;
         Freq = 1;
-        A = {{2.9*pi/4,0.70}};
-        B = {{0,0}};
+        A = {{0,2.6}};
+        B = {{0.01,0}};
       MeasureOrganizer = {0};
       AnyKinRotational RotKin = {
         Type = RotAxesAngles;
-          AnyRefFrame &ref1  = ..AFrame.Crank2;
+          AnyRefFrame &ref1  = ..AFrame.Coupler;
       };
-    };
-
-    
-    
-      AnyKinEqSimpleDriver softlindriver = 
-      {
-        MeasureOrganizer = {0};
-        DriverVel = {0.0};
-        DriverPos = {0.2};
-
-        CType = {Soft};
-        AnyFolder Weight = {
-          AnyFunConst W = 
-          {
-            Value = {0.05};
-          };        
-        };
-        WeightFun = {&Weight.W};
-        AnyKinLinear lin = 
-        {
-          AnyRefFrame &ref = ..AFrame.AO.O_Node ;
-        };
-      };
+    };    
+//      AnyKinEqSimpleDriver softlindriver = 
+//      {
+//        MeasureOrganizer = {0};
+//        DriverVel = {0.0};
+//        DriverPos = {0.2};
+//
+//        CType = {Soft};
+//        AnyFolder Weight = {
+//          AnyFunConst W = 
+//          {
+//            Value = {0.05};
+//          };        
+//        };
+//        WeightFun = {&Weight.W};
+//        AnyKinLinear lin = 
+//        {
+//          AnyRefFrame &ref = ..AFrame.AO.O_Node ;
+//        };
+//      };
 
       
   
@@ -175,11 +184,11 @@ AnyOptKinStudy optimize  =
 
 
   AnyBodyStudy Study = {
-    Kinematics.SolverType = KinSolOverDeterminate;
-    InitialConditions.SolverType = KinSolOverDeterminate;
-    nStep = 200;
+    Kinematics.SolverType = KinSolDeterminate2;
+    InitialConditions.SolverType = KinSolDeterminate2;
+    nStep = 500;
     tStart = 0;
-    tEnd = 3;
+    tEnd = 2;
     AnyFolder &Model = .Model;
     tracer_template chart1(
     ABS1 = "Main.Study.Output.Model.AFrame.BO.O_Node.r[0]",
