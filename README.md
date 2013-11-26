@@ -9,4 +9,4 @@ The AnyBody Modeling System is a multi-body software system specifically designe
 
 This repository contains only non-biomchanical models, small mechanisms and curious linkages. The models are mostly made for fun, and we hope the repository will eventually grow as more people contribute. 
 
-([Link to Project homepage] http://anybody-research-group.github.io/Any-Mechanism/ ) 
+[Link to Project homepage](http://anybody-research-group.github.io/Any-Mechanism/) 
