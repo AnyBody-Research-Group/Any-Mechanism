@@ -15,9 +15,15 @@ Main = {
     AnyOperation &ref =.Study.Kinematics;
   };
   
+    AnyVar BaseDistance = 0.2;
+    AnyVar Crank1 = 0.1;
+    AnyVar Crank2 = 0.25;
+    AnyVar Coupler = 0.25;
+    AnyVar Extender = 0.25;
+    
     AnyFixedRefFrame GlobalRef = {
       AnyRefNode g1  ={sRel = {0,0,0};};
-      AnyRefNode g2  ={sRel = {0.2,0,0};};
+      AnyRefNode g2  ={sRel = {BaseDistance ,0,0};};
     };  // Global reference frame
 
     
@@ -25,24 +31,35 @@ Main = {
     Fourbar_template HoekensLinkage(
     GND1 = .GlobalRef.g1,
     GND2 = .GlobalRef.g2,
-    L_CRANK1 = 0.1,
-    L_CRANK2 = 0.25,
-    L_COUPLER = 0.25
+    L_CRANK1 = .Crank1 ,
+    L_CRANK2 = .Crank2 ,
+    L_COUPLER = .Coupler 
     ) = {
       Coupler = {
-        AnyRefNode EndPoint = {sRel = 2*.Crank2Node.sRel; };
+        AnyRefNode EndPoint = {sRel = .Crank2Node.sRel+{..Extender,0,0}; };
         AnyDrawLine drw2 = {
           p0 = .Crank1Node.sRel; p1 = .EndPoint.sRel;
           Line.Thickness = 0.02;GlobalCoord = Off; Line.RGB = {0.5,0.5,1};
           Line.End.Style  = Line3DCapStyleArrow ;
         };
       };
-      AnyKinEqFourierDriver driver = 
+//      AnyKinEqFourierDriver driver = 
+//      {
+//        Type = Cos;
+//        Freq = 1;
+//        A = {{pi,pi/2*1.9}};
+//        B = {{0,0}};
+//         AnyKinMeasureOrg KinRot = {
+//            AnyKinRotational Rot = {
+//               AnyRefFrame &ref = ...Crank1 ;
+//               Type = RotAxesAngles;
+//            };
+//            MeasureOrganizer = {0};
+//         };
+//      };
+      AnyKinEqSimpleDriver driver = 
       {
-        Type = Cos;
-        Freq = 1;
-        A = {{pi,pi/2*1.9}};
-        B = {{0,0}};
+        DriverVel  ={2*pi};
          AnyKinMeasureOrg KinRot = {
             AnyKinRotational Rot = {
                AnyRefFrame &ref = ...Crank1 ;
@@ -55,9 +72,9 @@ Main = {
   };
 //    
   AnyBodyStudy Study = {
-    nStep = 500;
+    nStep = 100;
     tStart = 0;
-    tEnd = 2;
+    tEnd = 1;
     AnyFolder &Model = .HoekensLinkage;
     tracer_template chart1(
     ABS1 = "Main.Study.Output.Model.Coupler.EndPoint.r[0]",

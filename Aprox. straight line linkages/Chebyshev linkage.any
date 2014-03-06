@@ -31,7 +31,8 @@ Main = {
     L_CRANK2 = 0.5,
     L_COUPLER = 0.2
     ) = {
-      
+       Crank1_Axes0 = RotMat(pi/2.1,z);
+
       
       
       Coupler = {
@@ -58,9 +59,9 @@ Main = {
 
   AnyBodyStudy Study = {
     
-    nStep = 120;
+    nStep = 100;
     tStart = 0;
-    tEnd = 2;
+    tEnd = 1;
     AnyFolder &Model = .Model;
     tracer_template chart1(
     ABS1 = "Main.Study.Output.Model.Coupler.EndPoint.r[0]",

@@ -49,7 +49,7 @@ Main = {
         Type = Sin;
         Freq = 1;
         A = {{0,pi/8}};
-        B = {{0,0}};
+        B = {{0,1.5}};
          AnyKinMeasureOrg KinRot = {
             AnyKinRotational Rot = {
                AnyRefFrame &ref = ...Crank1;
@@ -64,9 +64,9 @@ Main = {
 
   AnyBodyStudy Study = {
     
-    nStep = 200;
+    nStep = 100;
     tStart = 0;
-    tEnd = 2;
+    tEnd = 1;
     AnyFolder &Model = .Model;
     tracer_template chart1(
     ABS1 = "Main.Study.Output.Model.Coupler.TracerPoint.r[0]",

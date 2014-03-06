@@ -14,7 +14,7 @@
     AnyDrawLine drwl = {
       p0 = {0,0,0};p1 = .endpoint.sRel;
       Line.Thickness = 0.02;GlobalCoord = Off;
-      Line.RGB = {1,1,0.5};
+      Line.RGB = {0.5,1,0.5};
     };
     
   };

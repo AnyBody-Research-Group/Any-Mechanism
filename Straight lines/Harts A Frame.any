@@ -31,7 +31,7 @@ Main = {
     Fourbar_template AFrame(
     GND1 = .GlobalRef.g1,
     GND2 = .GlobalRef.g2,
-    L_CRANK1 = 0.3,
+    L_CRANK1 = 0.31,
     L_CRANK2 = 0.3,
     L_COUPLER = 0.2
     ) = {
@@ -91,27 +91,7 @@ Main = {
      
      };
 
-//      AnyKinEqSimpleDriver Driver = 
-//      {
-//        MeasureOrganizer = {0};
-//        DriverVel = {-0.35};
-//        DriverPos = {0.4};
-//        AnyKinLinear lin = 
-//        {
-//          AnyRefFrame &ref1  = ..AFrame.Crank2.B_Node;
-//        };
-//      };  
-//    AnyKinEqFourierDriver driver =  {
-//        Type = Cos;
-//        Freq = 1;
-//        A = {{2.9*pi/4,0.70}};
-//        B = {{0,0}};
-//      MeasureOrganizer = {0};
-//      AnyKinRotational RotKin = {
-//        Type = RotAxesAngles;
-//          AnyRefFrame &ref1  = ..AFrame.Crank2;
-//      };
-//    };
+
     AnyKinEqFourierDriver driver =  {
         Type = Sin;
         Freq = 1;
