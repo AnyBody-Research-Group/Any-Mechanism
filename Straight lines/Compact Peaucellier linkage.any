@@ -63,7 +63,7 @@ Main = {
   };
     
 
-  AnyBodyStudy Study = {
+  AnyKinStudy Study = {
 //    InitialConditions.SolverType = KinSolOverDeterminate;
 //        Kinematics.SolverType = KinSolOverDeterminate;
 

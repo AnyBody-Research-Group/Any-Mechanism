@@ -31,7 +31,7 @@ Main = {
     Fourbar_template AFrame(
     GND1 = .GlobalRef.g1,
     GND2 = .GlobalRef.g2,
-    L_CRANK1 = 0.31,
+    L_CRANK1 = 0.34,
     L_CRANK2 = 0.3,
     L_COUPLER = 0.2
     ) = {
@@ -163,7 +163,7 @@ AnyOptKinStudy optimize  =
 
 
 
-  AnyBodyStudy Study = {
+  AnyKinStudy Study = {
     Kinematics.SolverType = KinSolDeterminate2;
     InitialConditions.SolverType = KinSolDeterminate2;
     nStep = 500;

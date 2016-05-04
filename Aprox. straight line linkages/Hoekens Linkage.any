@@ -23,7 +23,7 @@ Main = {
     
     AnyFixedRefFrame GlobalRef = {
       AnyRefNode g1  ={sRel = {0,0,0};};
-      AnyRefNode g2  ={sRel = {BaseDistance ,0,0};};
+      AnyRefNode g2  ={sRel = {..BaseDistance ,0,0};};
     };  // Global reference frame
 
     
@@ -36,7 +36,7 @@ Main = {
     L_COUPLER = .Coupler 
     ) = {
       Coupler = {
-        AnyRefNode EndPoint = {sRel = .Crank2Node.sRel+{..Extender,0,0}; };
+        AnyRefNode EndPoint = {sRel = .Crank2Node.sRel+{...Extender,0,0}; };
         AnyDrawLine drw2 = {
           p0 = .Crank1Node.sRel; p1 = .EndPoint.sRel;
           Line.Thickness = 0.02;GlobalCoord = Off; Line.RGB = {0.5,0.5,1};
@@ -71,7 +71,7 @@ Main = {
       
   };
 //    
-  AnyBodyStudy Study = {
+  AnyKinStudy Study = {
     nStep = 100;
     tStart = 0;
     tEnd = 1;

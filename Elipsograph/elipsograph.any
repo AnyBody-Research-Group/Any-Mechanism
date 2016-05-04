@@ -169,7 +169,7 @@ Main = {
   }; // MyModel
 
   // The study: Operations to be performed on the model
-  AnyBodyStudy MyStudy = {
+  AnyKinStudy MyStudy = {
     AnyFolder &Model = .MyModel;
     
     tracer_template Piston1Trace(

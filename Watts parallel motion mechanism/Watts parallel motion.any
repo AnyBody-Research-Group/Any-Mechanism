@@ -173,7 +173,7 @@ Main = {
       
     };  
 
-  AnyBodyStudy MyStudy = {
+  AnyKinStudy MyStudy = {
 //    InitialConditions.SolverType = KinSolOverDeterminate;
 //    Kinematics.SolverType = KinSolOverDeterminate;
     nStep = 200;

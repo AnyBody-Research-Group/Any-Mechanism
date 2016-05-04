@@ -62,7 +62,7 @@ Main = {
   };
     
 
-  AnyBodyStudy Study = {
+  AnyKinStudy Study = {
     
     nStep = 100;
     tStart = 0;
