@@ -6,7 +6,7 @@ The AnyBody Modeling System is a multi-body software system specifically designe
 
 This repository contains only non-biomchanical models, small mechanisms and curious linkages. The models are mostly made for fun, and we hope the repository will eventually grow as more people contribute. 
 
-<img src="https://www.dropbox.com/s/eukyz2f9cyok6l9/elipse2.gif" alt="Elipsograph"  style="height: 120px;"/>
+<img src="https://user-images.githubusercontent.com/1038978/27181037-18686a7c-51d6-11e7-9a74-5f240b86c354.gif" alt="Elipsograph"  style="height: 120px;"/>
 
 ### Current models:
 * Elipsograph
