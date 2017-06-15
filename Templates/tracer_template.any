@@ -13,7 +13,7 @@ AnyChart Tracer =
         Abscissa2 = ABS2;
         Value = VAL ;
         Lines.RGB = {0,0,1};
-        Lines.Thickness = 2;
+        Lines.Thickness = 3;
       };
     };
     AbsAxis.Visible = Off;

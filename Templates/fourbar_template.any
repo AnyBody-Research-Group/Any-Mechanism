@@ -12,6 +12,17 @@
   AnyVar CouplerLength =   L_COUPLER;
   
   
+AnyStyleDrawMaterial1 JntMaterialStyle =   
+{
+   EnableCreasing = Off;
+   EnableSmoothing = Off;
+   Opacity = 0.8;//;
+   EmissionRGB = {0.1,0.1,0.1};
+   SpecularRGB = {0.00,0.00,0.00};
+   Shininess = 0.1;
+   //RGB = {0.65, 0.65, 0.65};
+};
+  
 AnySeg Crank1 ={
     r0 = .Crank1_r0 ;
     Axes0 = .Crank1_Axes0 ;
@@ -65,7 +76,7 @@ AnyRevoluteJoint GroudCrank1Jnt =
   //Ref = 0;
   AnyRefFrame &Ref0 = .GND1;
   AnyRefFrame &Ref1 = .Crank1;
-  AnyDrawStdJoint drw = { };
+  AnyDrawStdJoint drw = {  };
 };
 
 AnyRevoluteJoint GroudCrank2Jnt = 
@@ -74,7 +85,7 @@ AnyRevoluteJoint GroudCrank2Jnt =
   //Ref = 0;
   AnyRefFrame &Ref0 = .GND2;
   AnyRefFrame &Ref1 = .Crank2;
-  AnyDrawStdJoint drw = { };
+  AnyDrawStdJoint drw = {AnyStyleDrawMaterial& ref = ..JntMaterialStyle; };
 };
 
 AnyRevoluteJoint CouplerCrank1Jnt = 
